@@ -3,9 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>지원서</title>
 </head>
 <body>
-  
+  <h1>프런트앤드 개발자 지원서</h1>
+  <p>HTML, CSS, 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.</p>
+  <hr> <!--수평선-->
+  <form>
+    <h4>개인 정보</h4>
+    <ul>
+      <li>
+        <label for="name">이름</label>
+        <input type="text" id="name" placeholder="공백없이 입력하세요.">
+      </li>
+      <li>
+        <label for="tel">연락처</label>
+        <input type="text" id="tel">
+      </li>
+    </ul>
+    <h4>지원 분야</h4>
+    <ul>
+      <li>
+        <input type="radio" name="dept" value="1" id="webp" checked>
+        <label for="webp">웹 퍼블리싱</label>
+      </li>
+      <li>
+        <input type="radio" name="dept" value="2" id="wepa">
+        <label for="wepa">웹 애플리케이션 개발</label>
+      </li>
+      <li>
+        <input type="radio" name="dept" value="3" id="etc">
+        <label for="etc">개발 환경 개선</label>
+      </li>
+    </ul>
+    <h4>지원 동기</h4>
+    <div>
+      <textarea rows="5" cols="60" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+    </div>
+    <button>접수하기</button> <!-- type="submit" -->
+    <button type="reset">다시쓰기</button>
+  </form>
 </body>
 </html>
