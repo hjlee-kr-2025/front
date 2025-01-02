@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폼태그 실습</title>
+</head>
+<body>
+  <h1>레드향 주문하기</h1>
+  <form action=""> <!--사용자의 입력을 받는 값들을 묶는 태그-->
+    <!-- action 속성에 form태그에서 입력받은 값을 전달하는 주소를 적는다.-->
+    <label>이름<input type="text"></label><br>
+    <label>배송주소<input type="text"></label><br>
+    <label>연락처<input type="text"></label><br>
+    <input type="button" value="주문하기">
+    <!-- input태그의 type="text"는 한줄입력창-->
+    <!-- type="button" 버튼을 생성-->
+    <fieldset>
+      <legend>그룹지정</legend>
+      <label>나이<input type="text"></label><br>
+      <label for="age">나이</label>
+      <input type="text" id="age">
+      <label for="tel">전화번호</label>
+      <input type="tel" id="tel">
+      <!--label태그의 for속성값과 input 태그의 id속성값을 같게 한다.-->
+    </fieldset>
+  </form>
+</body>
+</html>

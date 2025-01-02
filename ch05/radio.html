@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스와 라디오버튼</title>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>상품선택</legend>
+      <p>주문할 상품을 선택해주세요</p>
+      <label><input type="checkbox" value="1">선물용 3kg</label>
+      <label><input type="checkbox" value="2">선물용 5kg</label>
+      <label><input type="checkbox" value="3">가정용 3kg</label>
+      <label><input type="checkbox" value="4">가정용 5kg</label>
+      <p>포장선택</p>
+      <label><input type="radio" value="a" name="gift" checked>선물포장</label>
+      <label><input type="radio" value="b" name="gift">선물포장안함</label>
+      <!--라디오버튼에서는 name속성값을 같이해줘야 같은그룹으로 인식합니다.-->
+      <!-- checked속성이 있는 태그는 디폴트로 선택되어 화면에 보여줍니다.-->
+    </fieldset>
+  </form>
+  
+</body>
+</html>
