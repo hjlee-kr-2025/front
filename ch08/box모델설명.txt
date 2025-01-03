@@ -1,0 +1,11 @@
+margin - 다른 box와의 간격
+사용예)
+    margin: 10px; /* 전체, 사방 10px */
+    margin: 10px 20px; /* 위, 아래는 10px, 오른쪽, 왼쪽은 20px */ 
+    margin: 10px 20px 30px 40px; /* 위, 오른쪽, 아래, 왼쪽 : 시계방향 */
+    margin-top: (위)
+    margin-bottom: (아래)
+    margin-left: (왼쪽)
+    margin-right: (오른쪽)
+padding - 콘텐츠(텍스트, 이미지, 동영상등..) 와 border 사이 간격
+사용예) margin의 사용방법과 동일일
