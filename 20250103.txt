@@ -1,0 +1,103 @@
+HTML
+*구조
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+  </body>
+</html>
+*주석 : <!-- 주석문 -->
+<h1>~<h6> : 문단제목
+<p> : 문단
+<div> : 블럭 <p>태그와 유사
+<br>: 엔터, <hr>:수평선 => 둘다 종료태그없음
+폰트스타일
+<strong>, <b> : 굵게
+<em>, <i> : 기울임체
+<ins>, <u> : 밑줄글씨
+<del>, <s> : 삭제글씨
+리스트
+<ol>, <ul>
+    <li> : ol, ul과 함께 사용
+<table> => <tr> => (<th>, <td>)
+컨텐츠
+<img> : 이미지, 종료태그없음
+<audio> : 소리
+<video> : 동영상
+<a> : 다른페이지로 이동
+   예) <a href="naver.com">네이버</a>
+
+폼
+<form> -> 서버로 데이터 전송
+<fieldset>, <legend> - 화면에 그룹처럼 보이도록
+<label> : 폼요소 이름표
+<input> 다양한 입력을 받는 태그, 
+type속성으로 설정해서 사용한다. 종료태그없음
+  (type)
+  text : 한줄입력
+  password : 글씨를 가려서 보여준다.(*, 점)
+  email : 이메일형식
+  date : 날짜
+  time : 시간
+  check-box : 여러개 선택 입력
+  radio : 여러개중 하나 선택
+  submit : 전송버튼
+  button : 일반버튼
+  reset : 초기화버튼(작성한 내용 삭제)
+<textarea> : 여러줄입력
+<select>, <option> : 드롭다운메뉴
+<button> : 버튼생성 (타입은 input태그에서
+       버튼만드는 타입3가지 submit, button, reset과 동일)
+
+
+CSS - 우리가 작성한 HTML을 꾸미는 역할
+주석 : /* 주석문 */
+CSS작성방법과 적용우선순위
+1. 인라인 스타일 : 태그안에 style속성에 기록
+  예) <div style="border:1px solid #222;"><div>
+2. 내부스타일 : <style></style> 태그안에 기록
+  예) <style>
+        div {
+          border:1px solid #222;
+        }
+      </style>
+3. 외부파일 : 외부 css파일안에 스타일을 작성
+  예) style.css파일안에
+      <style>
+        div {
+          border:1px solid #222;
+        }
+      </style>
+    HTML 파일에서
+    <link rel="stylesheet" href="style.css">
+    로 불러온다.
+4. 브라우저 디폴트 스타일
+선택자
+- 전체선택자 : *
+- 타입(태그)선택자 : 태그이름
+- 클래스(class)선택자 : .클래스이름
+- 아이디(id)선택자 : #아이디이름
+    
+글꼴 스타일(속성)
+- font-family : 글꼴지정
+   예) div {
+        font-family: 고딕, 굴림, 명조;
+       }
+       => 고딕체를 먼저 찾고 없으면 굴림, 명조순으로 적용
+- font-size : 폰트크기 (px, em, %, ...)
+- font-sytle : 글씨 스타일지정(이텔릭체, 밑줄글씨, ...)
+- font-weight : 글씨 굵기(100~900 100단위 900이 제일굵은 글씨)
+웹폰트 (구글폰트) 사용법
+- 링크해서 사용
+@font-face{
+  font-sytle: 글꼴이름;
+  src: 글꼴파일 or 글꼴경로, ...;
+}
+글자색
+- 16진수 : #000, #000000 (RGB를 16진수로 표현)
+- rgb : RBG 를 각각 0~255로 표현
+- rgba : rgb + 투명도를 (0.0<투명>~1.0<불투명>으로 표현)
+
