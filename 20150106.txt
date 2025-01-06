@@ -1,0 +1,256 @@
+HTML, CSS
+<!DOCTYPE html> <!-- HTML 주석문-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>웹브라우저 탭제목</title>
+    <!-- 외부 style 을 구현해서 html문서로 가져오는 방법 -->
+    <link rel="stylesheet" href="css문서경로및파일이름">
+    <style>
+      /* CSS 주석문 */
+      /* CSS style을 이곳에 구현합니다. */
+      /* 내부 CSS */
+    </style>
+  </head>
+  <body>
+    웹브라우저에 표시되는 내용은 이곳에 구현
+  </body>
+</html>
+
+- html은 태그를 엇갈려서 작성하면 안된다.
+예> 잘못된 사용
+<div>
+  <p>
+</div>
+  </p>
+=>  <div>
+      <p> </p>
+    </div>
+
+** 주요 태그
+(block 태그)
+- <h1> ~ <h6> : 문단제목
+- <p> : 문단 (주로 텍스트의 문단을 나타낼때 사용)
+- <div> : 블럭 (p태그와 유사)
+  시맨틱태그 : header, main, section, footer, nav, ... (책 p64)
+  => div 와 구현방법법이 동일하다.
+(글자(폰트) 스타일)
+<strong>, <b> : 굵게
+<em>, <i> : 기울임체
+<ins>, <u> : 밑줄글씨
+<del>, <s> : 삭제글씨
+--- CSS에서 글자 스타일 변경
+  font-weight : bold; => 굵게
+  font-style : italic; => 기울임체
+  font-decoration : underline; => 밑줄글씨
+  font-decoration : line-throuth; => 삭제글씨
+
+(리스트)
+<ol>, <ul>
+  위 태그와 함께 <li> 태그를 사용하여 내용을 표시합니다.
+  - ol과 ul에 적용할 수 있는 style (CSS)
+     list-style-type: none; //블릿이나 숫자를 제거
+
+(테이블)
+<table> <!-- 2x2, 첫줄 굵은 글씨 -->
+  <caption>테이블 제목</caption>
+  <tr>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+(컨텐츠)
+<img src="이미지파일경로및이름" alt="이미지불러오지못했을때표시이름">
+: 이미지를 표시하는 태그, 종료태그없음
+<audio src="오디오파일이름" controls></audio> : 오디오 불러오기
+<video src="비디오파일이름" controls></video> : 비디오 불러오기
+<a href="www.naver.com">네이버</a> : 네이버 페이지로 이동할 수 있는 태그 => 다른페이지로 이동할 수 있도록 하는 태그
+
+(폼) - 사용자의 입력받는 부분 - 서버에 전송하기 위한 데이터 수집
+- 그룹처럼 보이도록 만드는 태그
+<fieldset>, <legend>
+- <label> 폼요소의 이름표
+- <input> 다양한 입력받는 태그, type속성지정해서 사용, 종료태그가 없다.
+  (type)
+  text: 한줄입력
+  password : 글자안보임
+  email : 이메일형식
+  date : 날짜
+  time : 시간
+  check-box : 여러개 선택 (중복가능선택)
+  radio : 여러개중 하나선택(중복불가선택)
+  submit : 버튼 - 전송
+  button : 버튼 - 일반
+  reset : 버튼 - 작성데이터초기화
+- <button type="submit | button | reset">버튼이름</button>
+- <textarea></textarea> : 여러줄 입력
+- <select>, <option> : 드랍다운메뉴
+
+CSS : HTML을 꾸민다. (style을 만든다.)
+주석 : /* 주석문을 이렇게 작성합니다 */
+** CSS 작성방법 및 우선순위
+1. 인라인 스타일 : 태그안에 style속성을 기록
+  예) <div style="font-size: 24px; border: 1px dotted red;"><div>
+2. 내부 스타일구현 : <style>태그안에 적용
+  예)
+    <style>
+    div {
+      font-size: 24px;
+      border: 1px dotted red;
+    }
+    </style>
+3. 외수 파일에 스타일 구현
+  예) style.css 파일을 만들고 그안에 style태그없이 style구현 내용만 기록 합니다.
+    div {
+      font-size: 24px;
+      border: 1px dotted red;
+    }
+  html문서에서
+  <head>태그안에
+  <link rel="stylesheet" href="style.css">
+  로 첨부합니다.
+4. 브라우저 기본 스타일
+
+선택자 - 어떤 태그(element) 에 적힌 컨텐츠의 style을 변경할까요? 
+1. id 선택자 - #아이디값 { 스타일속성 } => 유일성(단 하나만 변경경)
+2. class 선택자 - .클래스값 { 스타일속성 }
+3. tag(타입) 선택자 - 예) div { 스타일속성 }
+
+글꼴스타일(속성)
+- font-family : 글꼴지정
+  예) h1 {
+        font-family: '맑은 고딕', 명조, 굴림;
+      } /* 두 단어 이상으로 되어있는 폰트는 ''(작은따옴표)로 묶어서 표시해 줍니다. */
+- font-size : 폰트크기지정 (숫자뒤에 단위표시, px, em, %, pt, ...)
+- font-style, font-weight, font-decoration: 폰트 스타일지정
+- 웹폰트 사용법 (주로 구글폰트를 사용한다.)
+  사용예)
+    /*설정*/  
+    @font-face {
+      font-family: 글꼴이름; /* 선택자에서 사용할 폰트이름지정 */
+      src : local('글꼴이름'), /* 사용자 PC에 글꼴이 있으면 사용 */
+            url('글꼴경로') format('글꼴포맷'), ... /* 웹폰트 다운로드 */
+            ... ;
+    }
+    /*사용*/
+    선택자 {
+      font-family: 글꼴이름; /* @font-face의의 font-family에 설정한 이름 */
+    }
+
+** 글자색
+- 색상표현
+1. 16진수 : #000(3자리-rgb가 1자리씩), #000000(6자리-rgb가 2자리씩)
+  - 3자리는 한가지색상을 16등분한것 - 4096가지 색상 표현현
+  - 6자리는 한가지색상을 256등분한것 - 16,777,216가지 색상 표현
+2. rgb : RGB를 각각 0~255로 표현, rgb(R, G, B)
+3. rgba : rgb + 투명도(0.0~1.0), rgba(R, G, B, 투명도)
+
+<글자색>
+color : 글자색을 지정하는 속성
+사용예) 글자색을 흰색으로 표현하는 방법법
+  div {
+    color: #ffffff;
+  }
+  p {
+    color: rgb(255,255,255);
+  }
+  h1 {
+    color: rgba(255,255,255,1);
+  }
+  span {
+    color: white; /* CSS3에는 약 140개의 색상이름지원 */
+  }
+
+- 텍스트 정렬
+text-align: 텍스트의 가로정렬을 지정
+   들어가는 값
+   (start, end,) left(왼쪽), right(오른쪽), center(중앙), justify(양쪽)
+
+- line-height : 줄간격조절
+  : 폰트size와 같으면 줄간격이 0
+  : 1.0 or 100% 일때도 줄간격이 0
+
+- 텍스트를 세로의 중앙에 정렬하고 싶을때
+  : height 값과, line-height값을 같도록 설정해 준다.
+
+- 텍스트의 그림자 표과를 주는
+  : text-shadow 속성
+  사용예)
+  div {
+    text-shadow: 5px 5px 3px orange;
+    /* 가로(오른쪽), 세로(아래), 번짐정도(생략가능능), 색상 */
+  }
+
+- 텍스트 대소문자 변환(영문에서만만)
+  : text-transform 속성
+    capitalize : 첫글자만 대문자로 변경
+    uppercase : 모든글자 대문자로 변경
+    lowercase : 모든글자 소문자로 변경
+
+- 글자 간격을 조절하는 속성
+  : letter-spacing
+  사용예)
+  div {
+    letter-spacing: 0.5em; /* 글자간격 글씨크기만큼 글자간격을 둔다. */
+  }
+
+(목록스타일)
+- list-style-type : ol, ul 태그의 속성지정
+  none : 없음
+  disc, circle, square : 블릿모양 변경 (순서없는 리스트)
+  decimal, lower-roman, upper-roman, lower-alpha, upper-alpha : 순서있는 리스트의 숫자, 문자, 로마자 지정
+- list-style-image : 블릿모양을 이미지로 설정
+  사용예)
+  ul {
+    list-style-image: url('이미지이름'); 
+  }
+
+(표 스타일)
+- caption-side : <caption>태그에 적은 제목의 위치를 지정
+  top(기본) or bottom
+- 표의 테두리 : border속성
+- 표와 셀 테두리를 합치는 : border-collapese속성
+  seperate(기본) or collapse
+
+(CSS 박스모델 - 8장)
+블록레벨요소 - 한줄전체를 차지하는 태그 (div, h1, p, ...)
+인라인레벨요소 - span, input, button, ...
+
+용어설명 (블럭의 외각부터 설명)
+- margin (다른블럭과의 간격)
+- border (블럭의 테두리)
+- padding (테두리와 콘텐츠의 간력력)
+- 콘덴츠(text, image, video, audio등등)
+
+콘텐츠의 크기를 지정하는 속성성
+width : 가로크기
+height : 세로크기
+(크기의 값: px, %, ... , auto )
+box-sizing : width, height를 계산할때 사용하는 요소지정
+    border-box : border까지 width, height로 계산
+    content-box : 컨텐츠만 width, height로 계산
+box-shadow : 박스에 그림자 효과
+  사용예)
+  div {
+    box-shadow: 5px 5px 15px 5px red;
+    /* 가로(오른쪽), 세로(아래쪽), 흐림정도, 번짐정도, 색상 */
+  }
+
+** 테두리 스타일
+border-style : 테두리선의 모양 (책 P249)
+  - none(기본), solid(직선), dotted(점선), dashed(짧은실선), double(2중선)
+border-width : 테두리 두께
+  - 사방을 다른 두께로 설정할 수 있다.
+  div {
+    border-width: 1px 2px 3px 4px;
+    /* 위, 오른쪽, 아래, 왼쪽 순서로 두께가 설정 */
+  }
+border-color : 테두리 색상
+  - 사방 색상 별도 지정 가능 (위, 오른쪽, 아래, 왼쪽순) 
+border-radius : 테두리를 둥글게 만들어주는 속성
+
