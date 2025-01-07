@@ -1,0 +1,43 @@
+<!-- child.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 고급 선택자</title>
+  <style>
+    body {
+      background-color: #eee;
+    }
+    section {
+      width: 600px;
+      margin: 20px auto;
+    }
+    p {
+      width: 500px;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #ccc;
+      line-height: 2;
+    }
+    /* 자식선택자 */
+    /* 사용방법은 상위선택자, 자식선택자순으로 적고 두 선택자 사이에 > 를 둔다.
+      => 상위선택자(부모선택자) > 자식선택자 {} */
+    section > p {
+      color: blue; /* 자식선택자만 스타일 적용 */
+    }
+  </style>
+</head>
+<body>
+  <section>
+    테스트를 위해 작성하였습니다.
+    <h1>예약 방법 & 사용 요금</h1>
+    <p>아직 온라인 예약 신청이 준비되지 않았습니다.<br>
+    전화 (xxx-xxx-xxxx) 로 문의하시기 바랍니다.</p>
+    <div>
+      <p>가족실(2~4인) : 60,000원/일</p>
+      <p>도미토리(4인 공용) : 25,000원/일</p>
+    </div>
+  </section>
+</body>
+</html>
