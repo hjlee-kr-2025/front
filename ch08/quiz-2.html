@@ -22,12 +22,21 @@
 			width:100%;
 			height:50px;
 			background-color:#222;
+			clear: left; /* float: left 해제 - 없으면 float 설정되어있는 아래에 위치된다. */
 		}
 		footer > p {
 			color:#fff;
 			font-size:0.9em;
 			text-align: center;
 			line-height:50px;
+		}
+		article {
+			float: left;
+			width: 350px;
+			height: 200px;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid #ccc; /* 설정순서는 바껴도 관계없다 */
 		}
 </style>
 </head>
