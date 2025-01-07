@@ -1,0 +1,35 @@
+<!-- bg-clip.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .desc {
+      border: 5px dotted #222;
+      background-color: #ffd9a0;/*배경색*/
+      width: 350px;
+      padding: 20px;
+      margin: 20px;
+    }
+    #clip-border {
+      background-clip: border-box;/* 배경색지정범위 기본값: border-box */
+    }
+    #clip-padding {
+      background-clip: padding-box;/* padding 범위까지 배경색 설정 */
+    }
+    #clip-content {
+      background-clip: content-box;/*
+      컨텐츠만 배경색 설정 */
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="desc" id="clip-border"><h1>레드향</h1></div>
+    <div class="desc" id="clip-padding"><h1>레드향</h1></div>
+    <div class="desc" id="clip-content"><h1>레드향</h1></div>
+  </div>
+</body>
+</html>

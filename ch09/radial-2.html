@@ -1,0 +1,39 @@
+<!-- radial-2.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      margin: 10px;
+    }
+    /* at 다음에 오는 값은 중심점 위치 */
+    #grad1 {
+      background: radial-gradient(circle closest-side at 30% 40%, white, yellow, green);/* 가장 가까운 테두리 */
+    }
+    #grad2 {
+      background: radial-gradient(circle closest-corner at 30% 40%, white, yellow, green);/* 가장 가까운 모서리 */
+    }
+    #grad3 {
+      background: radial-gradient(circle farthest-side at 30% 40%, white, yellow, green);/*  가장 먼 테두리 */
+    }
+    #grad4 {
+      background: radial-gradient(circle farthest-corner at 30% 40%, white, yellow, green);/* 가장 먼 모서리 */
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li id="grad1"></li>
+    <li id="grad2"></li>
+    <li id="grad3"></li>
+    <li id="grad4"></li>
+  </ul>
+</body>
+</html>

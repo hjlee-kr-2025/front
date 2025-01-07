@@ -1,0 +1,53 @@
+<!-- bg94.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  /*  body {
+      background: url('../images/bg94.jpg') no-repeat center bottom fixed;
+      /*background-image: url('../images/bg94.jpg');
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-attachment: fixed;
+    }*/
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 20px;
+      background: url('../images/bg94.jpg') no-repeat left top;
+      float: left;
+    }
+    #bg1 {
+      background-size: auto; /* 원래 배경이미지 크기로 표시 */
+    }
+    #bg2 {
+      background-size: 200px; /* 너비를 200px로 높이는 자동계산 */
+    }
+    #bg3 {
+      background-size: 50%; /* 너비를 50% 줄이기 : box기준*/
+    }
+    #bg4 {
+      background-size: 100% 100%;
+    }
+    #bg5 {
+      background-size: contain; /* 배경을 다 보이도록 하는데 비율을 맞춰서 설정 100% 와 동일 */
+    }
+    #bg6 {
+      background-size: cover; /* 박스 전체를 배경이미지가 덮음 가로세로중 작은 size가 박스size로 맞춤 */
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="box" id="bg1"></div>
+    <div class="box" id="bg2"></div>
+    <div class="box" id="bg3"></div>
+    <div class="box" id="bg4"></div>
+    <div class="box" id="bg5"></div>
+    <div class="box" id="bg6"></div>
+  </div>
+</body>
+</html>
