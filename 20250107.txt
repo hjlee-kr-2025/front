@@ -1,0 +1,152 @@
+웹페이지를 만들때 기본구성
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"> <!-- 한글을 표시하기 위한 설정 -->
+    <title>탭 제목</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* 내부스타일 구성 */
+      div {
+        border: 1px solid #222;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 웹브라우저 본문에 나타내는 요소들 작성 -->
+    <h1>문단제목<h1>
+    <hr> <!-- 수평선 -->
+    <p>문단표현<br>두번째줄</p>
+    <div>
+      블럭요소(한줄을 차지합니다.)
+      <!-- p, div, h1, header, nav, section, footer, .... -->
+    </div>
+  </body>
+</html> <!-- 종료태그는 태그이름앞에 /를 붙인다. -->
+
+블럭요소태그
+<h1>~<h6> : 문단제목
+<p> : 문단 (주로 텍스트)
+<div> : 블럭
+  - 시맨틱태그 : header, main, section, aside, footer, nav, article, ...
+
+글자(폰트) 스타일
+<strong>, <b> : 굵게
+  - CSS => font-weight: bold; /* 100, 200, ... , 900(가장굵은글씨) */
+<em>, <i> : 기울임체
+  - CSS => font-style: italic;
+<ins>, <u> : 밑줄글씨
+  - CSS => font-decoration: underline;
+<del>, <s> : 삭제글씨
+  - CSS => font-decoration: line-throuth;
+
+
+리스트
+<ol>, <ul> + <li>
+  ol, ul 사용할수 있는 style
+  - list-style-type: xxx; /* 블릿이나 순서있는 값 종류지정 or 제거*/
+  (책 P222 표 7-5에 값 정리)
+
+테이블
+<table> <!-- 2x2 테이블 -->
+  <caption></caption>
+    <tr> <td></td> <td></td> </tr>
+    <tr> <td></td> <td></td> </tr>
+</table>
+
+컨텐츠
+<img scr="">, <video src=""></video>, <audio src=""></audio>
+다른 페이지로 이동
+<a href="이동할주소">주로 페이지내용이나 사이트이름</a>
+
+사용자의 입력을 받는 폼(서버로 넘길 데이터 수집하는 태그) 
+<form>서버로 넘길데이터는 폼태그 안에 작성</form>
+- <input type="" name="" id="">
+  type : text, password, email, date, time, check-box, radio,
+        submit, button, reset (책 p161 표)
+- <button type="submit|button|reset">버튼이름</button> : 버튼
+- <textarea rows="줄 수" cols="가로글자 수"></textarea> : 여러줄 입력
+- <select> <option>메뉴내용<option> </select> : 드롭다운메뉴 (메뉴갯수만큼 option태그가 들어갑니다.)
+
+
+CSS - HTML문서의 내용을 꾸며주는 역할
+우선순위 및 작성방법
+1. 태그에 style 속성
+2. html내부에 style 태그이용
+3. 별도 파일로 style 코드 작성
+4. 브라우저 기본 style
+
+선택자 (우선순위)
+1. id선택자 (하나만선택됨)
+  #id값 {}
+2. class선택자 (여러개가능)
+  .class값 {}
+3. 타입(태그)선택자 (여러개가능)
+  태그이름 {}
+4. 전체선택자
+  *
+
+글꼴스타일(폰트)
+- font-family : 글꼴을 지정합니다. 여러개를 적을 수있고, 제일앞에 적은 폰트가 없을때 다음폰트를 사용합니다.
+- font-size : 폰트 크기 (단위 : px, em, %, pt, ...)
+- font-style, font-weight, font-decoration
+- 웹폰트 사용
+  사용예)
+  /* 웹폰트 설정 */
+  @font-face {
+    font-family: 사용할폰트이름;
+    src : local(사용자설치된 폰트이름),
+        url(웹폰트경로), url(웹폰트경로), ... ;
+  }
+  /* 웹폰트 사용 */
+  선택자 {
+    font-family: 사용할웹폰트이름, ... ;
+  }
+
+글자색, 배경색, 테두리색 (색상설정)
+1. 16진수표현 : #000(3자리), #000000(6자리)
+2. rgb : rgb (R, G, B) - RGB를 각각 0~255중 하나 선택
+3. rgba : rgba (R, G, B, A) - RGB + A(0.0~1.0, 투명도)
+
+- color: 글자색지정
+- backgrond-color: 배경색
+- border-color: 테두리색
+
+- text-align: 텍스트(컨텐츠) 정렬 (가로기준) ; left, right, center, justify
+- line-height: 줄간격조절 (폰트size같으면 0)
+- text-shadow: 텍스트에 그림자효과
+  사용예) text-shadow: 5px 5px 3px orange;
+         /* 가로, 세로, 번짐정도, 색상 */
+
+- letter-spacing : 글자간격조절(자간)
+- list-style-type : ol, ul 태그의 속성지정
+- list-style-image : 블릿을 이미지형태로 설정
+
+- caption-side : 테이블제목 위치(top or bottom)
+- border-collapse : collapse; -> 표, 셀의 테두리 합침
+
+CSS 박스모델
+- 블록레벨요소 : div, p, h1, ...
+- 인라인레벨요소 : span, input, ...
+
+margin, border, padding, 콘텐츠
+- width : 콘텐츠 가로크기
+- height : 콘텐츠 세로크기
+- box-sizing : content-box|border-box;
+- box-shadow : 박스에 그림자 효과
+  사용예) box-shadow: 5px 5px 15px 5px red;
+        /* 가로, 세로, 흐림정도, 번짐정도, 색상 */
+- border-style : 테두리선 모양 - solid, dotted, dashed, ...
+- border-width : 테두리선 두께 (위, 오른쪽, 아래, 왼쪽)
+- border : 테두리선 두께, 모양, 색상을 한번에 설정
+  사용예) border: 1px solid red;
+- border-radius : 모서리를 둥글게
+
+- margin : 테두리와 테두리 사이의 여백
+- padding : 테두리와 컨텐츠 사이의 여백
+- float : left, right; 먼저 배치
+
+- position: static|relative|absolute|fixed;
+- left, right, top, bottom속성 - 박스위치지정정
+
+
