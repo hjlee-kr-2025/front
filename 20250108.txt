@@ -122,7 +122,184 @@ CSS (Cascading Style Sheet) - HTML의 내용을 꾸며준다.
     <title></title>
     <link rel='stylesheet' href='style.css'> <!-- css파일을 불러오는 부분 */
   </head>
-  
+4. 브라우저의 기본 스타일의 적용을 받습니다.
 
+CSS 기본구조
+선택자 {
+  스타일속성: 값;
+  스타일속성: 값; ...
+}
+CSS에서 가장 중요한 것 : 선택자 - 어떤것의 스타일을 변경할 것인가?
+1. id선택자 -> id값앞에 #을 붙여서 사용합니다. 중복으로 스타일이 적용되지 않습니다. 같은id값을 가진것이 여러 개가 있으면 제일 처음것만 적용이 됩니다. (주의사항: 유일성을 생각해야 합니다.)
+  사용예)
+  <div id="container">
+    ....
+  </div>
 
+  =>
+  <style>
+    #container {
+      border: 1px solid #222;
+      background: white;
+    }
+  </style>
+2. class 선택자 -> class값 앞에 .을 붙여서 사용합니다. 같은 클래스이름을 가진 것들이 동시에 스타일이 적용됩니다.
+  사용예)
+  <div id="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  =>
+  <style>
+    .box {
+      border: 1px dotted red;
+    }
+  </style>
+3. 타입선택자(태그선택자) - 태그이름을 선택자로 사용 - 중복적용이 됩니다.
+  사용예)
+  <div id="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+  =>
+  <style>
+    div {
+      border: 1px solid #222;
+    }
+  </style>
+4. 전체 선택자 : * -> 모든요소가 적용됩니다.
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+** 하위선택자
+  표현방법)  상위선택자 하위선택자 {} : 상위선택자와 하위선택자 사이에 공백을 둡니다.
+  사용예)
+      <div>
+        <h1></h1> <!-- 이곳이 스타일이 적용됩니다 -->
+        <section>
+          <h1></h1> <!-- 이곳이 스타일이 적용됩니다 -->
+          <p></p>
+        </section>
+      </div>
+
+      =>
+      /* div태그 아래에 있는 h1 태그 모두 스타일 적용 */
+      div h1 {
+        border: 1px solid #222;
+      }
+        
+** 자식선택자
+  표현방법) 상위(부모)선택자 > 자녀선택자 {} - 부모선택자와 자녀선택자 사이에 > 기호를 적는다.
+  사용예)
+      <div>
+        <h1></h1> <!-- 이곳이 스타일이 적용됩니다 -->
+        <section>
+          <h1></h1> <!-- 이곳은 스타일이 적용되지 않습니다. -->
+          <p></p>
+        </section>
+        <h1></h1> <!-- 이곳은 스타일이 적용됩니다 -->
+      </div>
+
+      =>
+      /* div태그 바로 아래에 있는 h1 태그만 스타일 적용 */
+      div > h1 {
+        border: 1px solid #222;
+      }
+
+** 인접형제 선택자 : 두선택자 사이에 + 로 표현
+  사용예)
+  <div id="container">
+    <h1></h1>
+    <div></div> <!-- 이곳만 스타일이 적용됩니다 -->
+    <div></div>
+    <div></div>
+  </div>
+  =>
+  h1 + div {
+    border: 1px solid #222;
+  }
+**  형제선택자 : 선택자 사이에 ~ 로 표현
+  사용예)
+  <div id="container"> <!-- 이곳은 스타일이 적용되지 않습니다. -->
+    <h1></h1>
+    <div></div> <!-- 이곳은 스타일이 적용됩니다 -->
+    <div></div> <!-- 이곳은 스타일이 적용됩니다 -->
+    <div></div> <!-- 이곳은 스타일이 적용됩니다 -->
+  </div>
+  =>
+  h1 ~ div {
+    border: 1px solid #222;
+  }
+
+==== 글꼴에 관련된 속성 ====
+font-family : 폰트(글꼴)을 지정할때 사용합니다.
+  사용예) font-family: '맑은 고딕', 돋움, 굴림; /* 가장앞에 있는것부터 적용, 없을때 또는 못찾을때 다음폰트를 사용, 두단어로 이루어진 폰트이름은 '' 또는 "" 로 묶어서 지정합니다. */
+font-size : 폰트크기 (단위: px, em, %, pt, ...)
+font-style(기울임체), font-weight(굵기), font-decoration(밑줄글씨, 삭제글씨)
+웹폰트 : 사용자가 가지고 있는 폰트를 사용하는 것이 아니고, 개발자의 의도대로 폰트를 표현하고 싶을때 웹에서 폰트를 다운받아 적용할 수 있도록 하는 방법
+/* 웹폰트설정 */
+@font-face {
+  font-family: 폰트이름설정;
+  src: local(사용자PC에 설치되어있는 폰트),
+      url(웹폰트경로1), url(웹폰트경로2), ...;
+}
+
+/* 웹폰트 사용*/
+  선택자 {
+    font-family: 위에서 설정한 폰트이름;
+  }
+
+==== 색상표현방법 ==== : 글자색, 배경색, 테두리색
+1. 16진수표현: #000(3자리, RGB가 각각 1자리), #000000(6자리, RGB가 각각 2자리)
+2. rgb를 사용: rgb(R, G, B) => 0~255까지의 숫자를 설정할수 있습니다.
+3. rgba를 사용: rgab(R, B, B, A) => RGB+ 투명도(A, 0.0~1.0)
+4. 색이름을 적어준다(CSS3에서는 140개의 색이름이 있다.)
+  - 사용예: white, red, blue, green, black, ....
+글자색지정 : color
+배경색지정 : background-color
+테두리색지정 : border-color
+    <style>
+      div {
+        color: white;
+        background-color: black;
+        border: 1px solid red;
+      }
+
+*** 텍스트 꾸미는 것과 관련된 스타일속성
+- text-align : 텍스트의 가로 정렬 (p214)
+   들어가는 값 ==> left(왼쪽), right(오른쪽), center(중앙), justify(양쪽쪽)
+- line-height : 줄간격을 조절합니다. (폰트size를 기준으로 생각하면 됩니다. 폰트size와 값이 같다면 0) (p215-216)
+  예) font-size: 16px; line-height: 16px|1.0|100%; /* 줄간격 0 */
+- text-shadow : 글씨에 그림자 효과를 줍니다.
+  예) text-shadow: 5px 5px 3px black;
+          /* 가로(오른쪽), 세로(아래), 번짐정도, 그림자색상 */
+- text-transform : 텍스트의 대소문자변경 (p220)
+  -> capitalize(첫글자를 대문자로), uppercase(대문자로), lowercase(소문자로)
+- letter-spacing : 글자간격조절(자간)
+  -> 지정하는 값이 양쪽으로 적용
+
+리스트 스타일 적용하는 CSS
+- list-style-type : 블릿모양이나 숫자,문자지정 (p222)
+  블릿은 3가지 (disc, circle, square)
+  순서있는 모양은 5가지
+- list-style-image : 블릿을 이미지로 할 때 사용합니다.
+  예) list-style-image: url('이미지경로'); 
+- list-style-position : 들여쓰기를 할때 사용할 수 있습니다.
+
+표 스타일을 적용하는 CSS
+- caption-side : 제목의 위치 (위, 아래)를 설정하는 속성
+    => top | bottom
+- border : 표 테두리를 만들어 줍니다.
+- border-collapse : collapse; /* table과 셀의 테두리를 합친다 */
+- border-spacing: 수평거리, 수직거리; /* 셀 사이의 여백을 지정 */
+
+=========  여기까지 책의 7장 입니다 =========
 
