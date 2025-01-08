@@ -1,0 +1,128 @@
+프런트엔드 개발 - 웹개발에서 화면에 보여지는 부분을 개발하는 것
+HTML, CSS, Javascript
+
+** HTML 기본구조
+<!DOCTYPE html> <!-- HTML5문서임을 알려주는 부분, html의 가장 첫부분에 들어갑니다. -->
+<html> <!-- html문서의 시작을 알리는 태그 - html태그의 시작 -->
+<!-- 이곳에 프런트엔드 개발의 모든내용이 들어갑니다 -->
+  <head> <!-- 서버가 이 웹문서를 해석하는데 필요한 내용, 정보 -->
+    <meta charset="utf-8"> <!-- 한글을 보여주기위해 설정 -->
+    <title>탭제목</title>
+    <link rel="stylesheet" href="css파일경로+이름"> <!-- 외부 css파일을 불러오는 태그 -->
+    <style>
+    /* 스타일태그안의 주석 */
+    /* 내부 css를 구현하는 부분 */
+    </style>
+    <!-- head태그안에 사용하는 태그중 meta, link는 종료태그가 없다 -->
+  </head>
+  <body> <!-- 웹브라우저에 보이는 내용을 작성하는 곳 -->
+  </body>
+</html> <!-- html문서의 끝을 알리는 태그 - html태그의 종료 -->
+
+
+블럭레벨요소를 가진 태그
+- 웹브라우저의 한줄을 차지한다.
+<div>, <p>, <h1>~<h6>, <table>
+<header>, <nav>, <section>, <main>, <aside>, <footer> ->  시맨틱태그(div와 동일)
+
+글자(폰트) 스타일
+<strong>, <b> : 굵게
+<em>, <i> : 기울임체
+<ins>, <u> : 밑줄글씨
+<del>, <s> : 삭제글씨 (글씨중앙에 가로줄)
+
+테이블에 관련된 태그 - <table>, <caption>, <tr>, <th>, <td>
+<!-- 2x2테이블 기본구조 -->
+<table>
+  <caption>테이블제목</caption>
+  <tr>
+    <th>1행 1열</th> <th>1행 2열</th>
+  </tr>
+  <tr>
+    <td>2행 1열</td> <td>2행 2열</td>
+  </tr>
+</table>
+
+텍스트외의 컨텐츠
+<img src="이미지화일경로+이름" alt="대체텍스트(이미지못불러왔을때)"> : 이미지를 화면에 표현할때사용, 종료태그없음
+<audio src="음원파일경로+이름" controls></audio> : 웹브라우저에서 소리를 들려주고 싶을때 사용하는 태그
+<video src="비디오파일경로+이름" controls></video> : 비디오 표시
+
+웹페이지 이동을 위한 태그
+<a href="이동할 페이지 주소">페이지이름 또는 내용</a>
+
+리스트 - <ol>, <ul>, <li>
+<ol> : 순서있는 리스트 (숫자, 소문자, 대문자, 로마소문자, 로마대문자중 하나를 선택해서 사용할 수 있습니다.)
+구조: 
+<ol>
+  <li> 첫번째 리스트 </li>
+  <li> 두번째 리스트 </li>
+  <li> 세번째 리스트 </li>
+  ...
+</ol>
+<ul> : 순서가 없는 리스트 (리스트 앞에 블릿이 붙는다.)
+      구조는 ol 태그와 동일하다
+
+화면에 그룹으로 묶어주는 태그
+<fieldset> - 네모박스로 그룹화 시켜주는 태그
+<legend> - 네모박스에 제목을 보여주는 태그
+
+사용자입력을 받는것 / 서버로 보내는 데이터 수집
+<form>태그
+<input> : 사용자의 입력을 받는 대표적인 태그, type속성을 지정해서 다양하게 사용합니다. 종료태그없음.
+- 한 줄 텍스트 입력을 받는다.
+  type: text, password(텍스트가 블릿형태로 나타남), email(이메일 형식 체크)
+- 날짜, 시간
+  type: date, time
+- 선택
+  type: check-box(여러개선택), radio(여러개중 하나선택)
+- 버튼
+  type: submit(데이터를 서버에 전송), button(일반버튼), reset(폼태그 내용 초기화)
+<textarea> : 여러줄의 입력을 받을 때 사용하는 태그
+  사용예) <textarea rows='4' cols="60"></textarea>
+        => 여러줄을 입력할 수 있는 창을 만드는데 가로 60글자, 세로4줄 크기로 만들어 달라는 의미.
+<button> : 버튼을 만들어주는 태그
+  사용예) <button type="submit">버튼이름</button>
+  type: submit, button, reset (input태그에 설명한 내용과 같다.)
+<select>, <option> : 드랍다운 메뉴를 만들어주는 태그
+  사용예)
+  <select>
+    <option>메뉴1</option>
+    <option>메뉴2</option>
+    ...
+  </select>
+==== 입력창에 이름을 달아주는 태그
+  : <label>입력창이름</label>
+
+CSS (Cascading Style Sheet) - HTML의 내용을 꾸며준다.
+** 작성방법과 우선순위
+1. 태그안에 style속성으로 작성한다.
+  예) <div style="border:1px solid #222;">박스입니다</div>
+  - 여러개를 적용시킬때는 css속성을 ;으로 구분해서 작성합니다.
+2. 내부스타일 사용 - <style>이곳에 구현</style> - <style>태그안에 작성
+  예)
+  <head>
+    ....
+    <style>
+    div {
+      border: 1px solid #222;
+    }
+    </style>
+  </head>
+3. 외부파일에 스타일을 작성하고 html문서에서 불러와서 사용한다. - 외부스타일
+  예)
+  style.css 파일 - 태그<> 없이 css내용만 작성한다.
+  div {
+    border: 1px solid #222;
+  }
+
+  html문서에서
+  <head>
+    ...
+    <title></title>
+    <link rel='stylesheet' href='style.css'> <!-- css파일을 불러오는 부분 */
+  </head>
+  
+
+
+
