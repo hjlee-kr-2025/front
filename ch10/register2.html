@@ -1,0 +1,55 @@
+<!-- register1.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="./register2.css">
+</head>
+<body>
+  <form id="signup"> <!-- 폼태그 시작 -->
+    <fieldset> <!-- 필드셋 1 시작 -->
+      <legend>로그인 정보</legend>
+      <ul>
+        <li>
+          <label for="userid">아이디</label>
+          <input id="userid" name="userid" type="text" required autofocus>
+        </li>
+        <li>
+          <label for="pwd1">비밀번호</label>
+          <input id="pwd1" name="pwd1" type="password" required>
+        </li>
+        <li>
+          <label for="pwd2">비밀번호확인</label>
+          <input id="pwd2" name="pwd2" type="password" required>
+        </li>
+        <li>
+          <label for="level">회원등급</label>
+          <input id="level" name="level" type="text" readonly value="준회원">
+        </li>
+      </ul>
+    </fieldset> <!-- 필드셋 1번 종료 -->
+    <fieldset> <!-- 필드셋 2번 시작 -->
+      <legend>개인 정보</legend>
+      <ul>
+        <li>
+          <label for="fullname">이름</label>
+          <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
+        </li>
+        <li>
+          <label for="email">이메일</label>
+          <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
+        </li>
+        <li>
+          <label for="tel">연락처</label>
+          <input id="tel" name="tel" type="text" autocomplete="off">
+        </li>
+      </ul>
+    </fieldset> <!-- 필드셋 2번 종료 -->
+    <fieldset> <!-- 필드셋 3번 시작 -->
+      <button>제출</button> <!--form태그안의 button 태그는 기본type이 submit 이다. -->
+    </fieldset> <!-- 필드셋 3번 종료 -->
+  </form> <!-- 폼태그 종료 -->
+</body>
+</html>

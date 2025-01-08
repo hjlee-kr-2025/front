@@ -1,0 +1,70 @@
+/* register1.css */
+* {
+  margin : 0; /* 외부여백 0으로 */
+  padding : 0; /* 내부여백 0으로*/
+  box-sizing: border-box; /* 테두리선까지 크기지정 */
+}
+body {
+  background-color: #ccc;
+  /* 전체 배경색*/
+  padding: 20px;
+
+}
+#signup { /* form */
+  background-color: #fff;
+  border: 1px solid #222;
+  padding: 20px;
+  width: 400px;
+  margin: 30px auto; /* 좌우는 auto로 설정해 중앙으로 오게 만들어 준다 */
+}
+#signup fieldset { /* 하위선택자 register1.html에서는 #signup 대신 form을 사용해도 같은 결과를 만들어 냅니다. */
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+#signup legend { /* #signup 대신 form 사용해도 똑같다. */
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-bottom: 10px;
+}
+#signup ul li { /* 하위 선택자 */
+  line-height: 30px;
+  list-style: none;
+  padding: 5px 10px;
+  margin-bottom: 2px;
+}
+/* 자녀선택자를 사용하여 위에서 적힌 스타일과 동일한 역할을 하는 방법 */
+/* form > fieldset > ul > li {
+  스타일내용구성
+}*/
+#signup button {
+  border: 1px solid #222;
+  border-radius: 20px;
+  display: block;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 5px auto; /* 중앙정렬 */
+  padding: 7px 25px;
+}
+#signup label {
+  float: left;
+  font-size: 13px;
+  width: 110px;
+}
+
+#signup input[readonly] {
+  border: none;
+}
+#signup input[type='text'], #signup input[type='password'], #signup input[type='email'] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 5px;
+  width: 200px;
+}
+#signup input[required] {
+  border: 1px solid red;
+}
+
+/* 선택자의 우선순위가 같을때는 마지막에 적용한것이 사용됩니다 */
+/* 선택자를 ,로 구분하면 각각의 선택자에 스타일이 적용됩니다. */

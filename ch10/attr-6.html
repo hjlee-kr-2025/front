@@ -1,0 +1,36 @@
+<!-- attr-6.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성 선택자</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+    li a {
+      line-height: 30px;
+      font-size: 14px;
+      color: blue;
+      text-decoration: none;
+    }
+    /* href값의 끝에 hwp가 있는지를 찾는다 */
+    a[href$='hwp'] {
+      background: url('../images/hwp_icon.gif') no-repeat center right;
+      padding-right: 25px; /*오른쪽에 여백을 준다 - 아이콘 표시를 위해서 */
+    }
+    a[href$='xls'] {
+      background: url('../images/excel_icon.gif') no-repeat right center;
+      padding-right: 25px;
+    }
+  </style>
+</head>
+<body>
+  <h3>회사 소개 파일 내려받기</h3>
+  <ul>
+    <li><a href="intro.hwp">hwp 파일</a></li>
+    <li><a href="intro.xls">엑셀 파일</a></li>
+  </ul>
+</body>
+</html>
