@@ -1,0 +1,28 @@
+<!-- tr-1.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      margin: 20px auto;
+      width: 100px;
+      height: 100px;
+      background-color: #07f;
+      border: 1px solid #222;
+      transition-property: width, height, background-color;/* 트랜지션 대상 지정 */
+      transition-duration: 2s, 1s, 3s;
+    }
+    .box:hover {
+      width: 200px;
+      height: 120px;
+      background-color: crimson;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

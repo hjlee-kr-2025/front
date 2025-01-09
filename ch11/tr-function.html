@@ -1,0 +1,44 @@
+<!-- tr-function.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition-timing-function</title>
+  <style>
+    .container {
+      width: 800px;
+      margin: 20px auto;
+    }
+    .container div {
+      float: left;
+      width: 100px;
+      height: 50px;
+      margin: 5px 10px;
+      padding: 5px;
+      color: white;
+      background-color: #006aff;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .container:hover div {
+      height: 400px;
+    }
+    .ease {transition: 3s ease;}
+    .linear {transition: 3s linear;}
+    .ease-in {transition: 3s ease-in;}
+    .ease-out {transition: 3s ease-out;}
+    .ease-in-out {transition: 3s ease-in-out;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="ease">ease</div>
+    <div class="linear">linear</div>
+    <div class="ease-in">ease-in</div>
+    <div class="ease-out">ease-out</div>
+    <div class="ease-in-out">ease-in-out</div>
+  </div>
+</body>
+</html>
