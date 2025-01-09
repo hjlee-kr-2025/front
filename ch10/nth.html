@@ -1,0 +1,58 @@
+<!-- nth.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      text-align: center;
+      color: #2b2b2b;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 200px;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    td {
+      text-align: left;
+      padding: 10px;
+      padding-left: 30px;
+    }
+    /* table 안의 tr태그중 홀수번째 있는 것만 스타일 적용 
+    홀수 : 2n+1, odd;
+    짝수 : 2n, even;
+    */
+    table tr:nth-of-type(odd) {
+      background-color: lightgray;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>웹개발</h1>
+    <table>
+      <tr>
+        <td>HTML</td>
+      </tr>
+      <tr>
+        <td>CSS</td>
+      </tr>
+      <tr>
+        <td>javascript</td>
+      </tr>
+      <tr>
+        <td>React</td>
+      </tr>
+      <tr>
+        <td>node.js</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
