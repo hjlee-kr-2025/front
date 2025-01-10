@@ -1,0 +1,33 @@
+<!-- grid-2.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrapper {
+      width: 600px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 같은 크기의 셀 3개를 만든다. */
+      grid-template-rows: minmax(100px, auto); /* 줄높이 최소 100px */
+    }
+    .items {
+      padding: 10px;
+      background-color: #eee;
+    }
+    .items:nth-child(odd) {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="items">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+    <div class="items">Lorem ipsum dolor.</div>
+  </div>
+</body>
+</html>

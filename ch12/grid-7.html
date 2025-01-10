@@ -1,0 +1,78 @@
+<!-- grid-7.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid 12x6</title>
+  <style>
+    .container {
+      width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(6, 100px);
+      grid-template-areas: 
+        "box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1"
+        "box2 box2 box3 box3 box3 box3 box3 box3 box4 box4 box4 box4 "
+        "box2 box2 box3 box3 box3 box3 box3 box3 box4 box4 box4 box4 "
+        "box2 box2 box3 box3 box3 box3 box3 box3 box5 box5 box5 box5 "
+        "box6 box6 box6 box6 box6 box6 box6 box6 box6 box6 box6 box6"
+        "box7 box7 box7 box7 box7 box8 box8 box8 box8 box8 box8 box8";
+
+    }
+    .box {
+      padding: 15px;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+    .box1 {
+      background-color: #3689ff;
+      grid-area: box1;
+    }
+    .box2 {
+      background-color: #00cf12;
+      grid-area: box2;
+    }
+    .box3 {
+      background-color: #ff9019;
+      grid-area: box3;
+    }
+    .box4 {
+      background-color: #ffd000;
+      grid-area: box4;
+    }
+    .box5 {
+      background-color: aqua;
+      grid-area: box5;
+    }
+    .box6 {
+      background-color: #ffd000;
+      grid-area: box6;
+    }
+    .box7 {
+      background-color: blueviolet;
+      grid-area: box7;
+    }
+    .box8 {
+      background-color: brown;
+      grid-area: box8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">
+      <h1>프로젝트 기반 AWS 풀스택 개발자 과정</h1>
+    </div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box box5">box5</div>
+    <div class="box box6">box6</div>
+    <div class="box box7">box7</div>
+    <div class="box box8">box8</div>
+  </div>
+  
+</body>
+</html>
