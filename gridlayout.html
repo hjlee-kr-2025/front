@@ -7,10 +7,11 @@
   <title>Document</title>
   <style>
     .container {
-      width: 700px;
+      width: 800px;
       display: flex; /* container 클래스가 가르키는 요소 안의 내용을 flex로 배치한다는 의미 */
       background-color: #eee;
       border: 1px soild #222;
+      margin-bottom: 40px;
     }
     .box {
       padding: 5px 45px;
@@ -31,6 +32,22 @@
       column-reverse : 아래->위
       */ 
     }
+    #opt2 {
+      flex-wrap: wrap-reverse;
+      /* 줄바꾸기설정
+      nowrap(기본) - 바꾸지 않는다 - 상위요소크기에 맞춰서 자동크기조절.
+      wrap - 여러줄에 표시 - 위에서부터 시작
+      wrap-reverse - 여러줄 - 아래부터시작
+      */
+      justify-content: space-around;
+      /* 줄간격
+      flex-start(기본) : 오른쪽정렬
+      flex-end : 왼쪽정렬
+      center : 중앙정렬
+      space-between : 처음, 끝을 맞추고 간격 동일하도록 설정
+      space-around : 전체 간격을 동일하게
+      */
+    }
   </style>
 </head>
 <body>
@@ -39,5 +56,14 @@
     <div class="box"><p>2</p></div>
     <div class="box"><p>3</p></div>
   </div>
+  <div class="container" id="opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>
+  </div>
+
 </body>
 </html>
