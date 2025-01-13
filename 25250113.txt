@@ -1,0 +1,292 @@
+HTML(HyperText Markup Language), CSS(Cascading Style Sheet)
+HTML5, CSS3
+
+- HTML: tag를 사용하여 내용을 구성
+기본구조
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>탭제목</title>
+</head>
+<body>
+  웹페이지 내용
+</body>
+</html>
+
+=== 구조를 잡는 태그들(블럭레벨요소: 한줄을 차지하는 태그그)
+div, (시맨틱태그 - header, footer, main, section, nav ...) => P64
+
+텍스트
+<h1>~<h6> => 문단제목에 주로 사용합니다. (블럭레벨요소)
+<p> => 한문단을 구성할 때 사용
+<br> => HTML화면에서 엔터기능을 하는 태그
+<hr> => 수평선을 그려준다.
+<b>, <strong> => 굵은글씨
+<i>, <em> => 기울임글씨(이텔릭체)
+<u>, <ins> => 밑줄글씨
+<s>, <del> => 삭제글씨
+리스트
+<ol>:순서가있는, <ul>: 순서가 없는 리스트 => <li>태그와 함께사용됩니다.
+<ol>
+  <li>내용1</li>
+  <li>내용2</li>
+</ol>
+type속성으로 숫자, 대문자, 소문자, 로마대문자, 로마소문자 설정
+start속성으로 시작번호를 지정
+테이블
+<table>
+  <caption>테이블제목</caption>
+  <tr>
+    <th>1행1열(굵은글씨)</th>
+    <th>1행2열(굵은글씨)</th>
+  </tr>
+  <tr>
+    <td>2행1열(일반글씨)</td>
+    <td>2행2열(일반글씨)</td>
+  </tr>
+</table>
+
+화면에 그룹으로 묶어주는 태그
+<fieldset>
+  <legend>그룹제목<legend>
+  그룹에 묶이는 내용
+</fieldset>
+
+사용자 입력를 받아 서버에 전송하는 태그 : form
+<input> : type을 지정해서 여러가지 방법으로 입력을 받는다.
+  텍스트: text, password, email, ... 
+  선택: check-box(여러개 동시선택가능), radio(여러개중에 반드시 하나선택)
+  버튼: submit(전송), button(일반), reset(새로고침+초기화)
+  날짜, 시간 : date, time
+<button>버튼이름</button>태그: 버튼을 만들어 주는 태그, type 3가지(submit, button, reset)
+<select>, <option> : 드랍다운메뉴를 만들어주는 태그
+사용방법) 
+<select>
+  <option>메뉴1</option>
+  <option>메뉴2</option>
+</select>
+<label for="id값">입력창이름</label>
+
+*** CSS
+CSS 사용방법 및 우선순위
+1. 태그안에 style속성을 사용해서 작성합니다.
+  사용예) <div style={border: 1px soild #222;}>박스1</div>
+        => 박스1에 1px, 실선, 색상#222인 테두리를 만들어 줍니다.
+2. HTML의 head태그안에 <style></style>태그를 넣어서 작성해 줍니다.
+  <head>
+    <meta ..>
+    <title></title>
+    <style>
+    div {
+      border: 1px solid #222;
+    }
+    </style>
+  </head>
+  ==> div 이름을 가진 태그는 1px, 실선, #222색상의 테두리가 만들어 집니다.
+3. 외부스타일 파일을 HTML에 불러오는 방법
+  style.css 파일
+  -----
+  div {
+    border: 1px solid #222;
+  }
+  -----
+  html에서 불러오는 방법
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="style.css"> => 외부스타일 추가가
+  </head>
+4. 브라우저의 디폴트 스타일
+
+CSS 선택자
+1. id선택자 -> #id값  => 단독선택(1개만 선택)
+  <div id="box1">박스1</div> 이라는 내용을 선택하려고 하면
+  #box1 {
+    border: 1px solid #222;
+  }
+2. class선택자 -> .클래스값  => 중복선택가능(같은 클래스값 모두선택)
+  <div class="box">박스1</div> 이라는 내용을 선택하려고 하면
+  .box {
+    border: 1px solid #222;
+  }
+3. 타입(태그)선택자 -> 태그이름  => 중복선택가능
+  <div class="box" id="box1">박수1</div>
+  div {
+    border: 1px solid #222;
+  }
+4. 전체 선택자 -> *
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+고급선택자) ch10에서 설명하고 있습니다.
+*** 하위선택자
+  표현방법: 상위선택자 하위선택자{} -> 상위선택자와 하위선택자사이에 공백을 둡니다.
+  사용예)
+    <div class="container">
+      <h1>하위선택자</h1>   -> 스타일적용
+      <section>
+        <h1>설명</h1>       -> 스타일적용
+      </section>
+    </div>
+    =>
+    div h1 { /* div 안에 있는 h1태그가 전부 스타일적용 */
+      border: 1px solid #222;
+    }
+*** 자식선택자
+  표현방법: 부모선택자 > 자식선택자 {}
+  사용예)
+    <div class="container">
+      <h1>하위선택자</h1>   -> 스타일적용
+      <section>
+        <h1>설명</h1>       -> 스타일적용이 안됩니다.
+      </section>
+      <h1>종료</h1>         -> 스타일적용용
+    </div>
+    =>
+    div > h1 { /* div태그 한단계 아래에 있는 h1태그에 적용 */
+      border: 1px solid #222;
+    }
+*** 인접형제 선택자: 두 선택자 사이에 + 로 표현
+  사용예)
+    <div class="container">
+      <h1>인접형제 선택자</h1>
+      <div class="box">박스1</div>   --> 이곳만 스타일이 적용됩니다.
+      <div class="box">박스2</div>
+      <div class="box">박스3</div>
+    </div>
+    =>
+    h1 + div {
+      border: 1px solid #222;
+    }
+*** 형제선택자 : 두선택자 사이에 ~ 로 표시
+  사용예)
+    <div class="container">
+      <h1>형제 선택자</h1>
+      <div class="box">박스1</div>    --> 이곳이 스타일이 적용됩니다.
+      <div class="box">박스2</div>    --> 이곳이 스타일이 적용됩니다.
+      <div class="box">박스3</div>    --> 이곳이 스타일이 적용됩니다.
+    </div>
+    =>
+    h1 ~ div {
+      border: 1px solid #222;
+    }
+*** 가상클래스 선택자
+  마우스 커서가 위에 올라왔을때
+  <button>전송</button>
+  =>
+  button:hover {
+    background-color: black;
+    color: white;
+  }
+
+CSS속성들
+===== 글꼴에 관련된 속성
+font-family - 글꼴을 지정할 때 사용
+사용예)
+    div {
+      font-family: "맑은 고딕", 고딕, 명조, 굴림;
+      /* 맑은 고딕을 적용하려고 하는데 폰트가 있으면 적용, 없으면 고딕, 명조, 굴림 순으로 적용, 두단어이상의 폰트는 "", ''로 묶어줍니다. */
+    }
+font-size : 폰트 크기 (단위와 함께사용, px, em, %, ...)
+font-style: italic; (이텔릭체, 기울임체)
+font-weight: bold | 100 | ... | 900; (폰트 굵기, 900이 제일 굵다.)
+font-decoration: underline | line-thorugh; (밑줄글씨, 삭제글씨)
+text-shadow : 그림자효과
+  사용예) text-shadow: 5px 5px 3px orange;
+        /* 가로(오른쪽), 세로(아래), 번짐정도, 그림자색상 P218 */
+text-transform : 대,소문자 변경
+  text-transform: capitalize | uppercase | lowercase;
+              /*첫글만 대문자, 모두대문자, 모두소문자 */
+letter-spacing : 자간설정 (P221)
+웹폰트 설정 (P199)
+@font-face {
+  font-family: 폰트이름설정;
+  src: local('폰트이름'), url(웹폰트경로), url(웹폰트경로), ...;
+}
+사용)
+  선택자 {
+    font-family: 웹폰트로 설정한 이름;
+  }
+
+
+*** 목록 스타일
+ul, ol 태그에 스타일 속성 list-style-type 속성으로 지정
+  ul) disc(기본,검정으로 칠해진 원), circle(내부가 흰색으로 비어저있는 원), square(채운 사각형), none(블릿을 없앤다.)
+  ol) decimal(숫자), lower-roman(로마소문자), upper-roman(로마대문자), lower-alpha(소문자), upper-alpha(대문자)
+이미지 블릿을 사용할 수 있는 list-style-image
+  사용예) 
+    ul {
+      list-style-image: url("이미지경로+이름");
+    }
+*** 표 스타일
+  caption-side: top(기본) | bottom; /* 제목을 표 위로, 제목을 표 아래로*/
+  border: 1px solid #222; /* 표의 테두리 그려줌 */ 
+  사용예) p229 그림 7-30
+    table, th, td {
+      border: 1px solid #222;
+    }
+  border-collapse: collapse; /* table테두리, 셀테두리를 합쳐줍니다 */
+
+*** 색상 표현 방법 *** ; 글자색, 배경색, 테두리색,
+16진수는 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A(10), B(11), C(12), D(13), E(14), F(15)
+1. 16진수표현: #000(3자리, R,G,B 각 1자리씩), #000000 (6자리, R,G,B 각 2자리씩)
+2. rgb(): rgb(숫자1, 숫자2, 숫자3) => 숫자: 0~255(FF) -> 순서는 R,G,B
+3. rgba() : rgba(R, G, B, A) => rgb+투명도 설정 => A: 0~1, 소수점허용
+4. 색이름 : black, red, green, blud, orange, white,.. 등 140개(CSS3)
+==> color picker를 사용해서 우리가 사용하고 싶은 색상을 지정하면 됩니다.
+글자색 지정하는 속성 : color
+배경색을 지정하는 속성 : background-color
+테두리색을 지정하는 속성 : border-color
+
+레이아웃 : 내용을 배치하는 것 (box단위)
+한줄을 차지하는 태그: 블럭레벨요소
+  - div
+한줄안에 여러개를 사용할 수 있는 태그: 인라인 레벨요소
+  - span
+
+박스의 구성
+margin(외부여백) border(테두리) padding(내부여백) 내용(컨텐츠:텍스트, 이미지, 동영상등 ) --> P240 그림 8-3
+
+박스의 크기
+width: 폭
+height: 높이
+box-sizing: content-box(기본) | border-box;
+
+box-shadow: 5px 5px 15px 5px blue;
+/* 가로(오른쪽), 세로(아래쪽), 흐림정도, 번짐정도, 그림자색상 */
+
+border-style ; 테두리선 모양
+  solid(직선), dotted(점선), dashed(짧은 실선), double(2중선)
+
+border-width ; 테두리선 두께
+border-color ; 테두리선 색상
+
+4군데 각각 style, width, color를 지정할 수 있다.
+예) border-style: solid dotted dashed double;
+    /* 위쪽(실선), 오른쪽(점선), 아래쪽(짧은실선), 왼쪽(2중선) */
+=> 설정순서가 위쪽->오른쪽->아래쪽->왼쪽으로 시계방향으로 돌아가면서 설정해 줍니다.
+
+보통 border는 아래와 같이 한번에 설정해줍니다.
+border: 1px solid black; /* 두께, 모양, 색상을 한번에 설정합니다. 설정순서는 관계가 없습니다. */
+
+border-radius: 테두리의 모서리를 둥글게 합니다.
+===> 원형으로 모양을 만들때 정사각형으로 만들어서
+  border-radius: 50%; 로 설정하면 원형으로 됩니다.
+
+위치를 지정하는 속성
+left, right, top, bottom
+position: static(기본) | relative | absolute | fixed(브라우저전체기준);
+
+***** 배경
+- background-color: 배경색
+- background-clip: border-box | padding-box | content-box ; 배경색 설정시 어디까지 칠할것인지 지정해 주는것.
+- background-image: url("이미지경로");
+- background-repeat: repeat | repeat-x | repeat-y | no-repeat;
+   /* 배경이미지 반복에 대한 설정 */
+- background-size: auto(기본값) | contain | cover; /*P302 그림9-5*/
+   /* 배경이미지 크기
+
+
