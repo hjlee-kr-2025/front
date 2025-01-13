@@ -289,4 +289,28 @@ position: static(기본) | relative | absolute | fixed(브라우저전체기준)
 - background-size: auto(기본값) | contain | cover; /*P302 그림9-5*/
    /* 배경이미지 크기
 
+  <<< 그라데이션 >>>
+- 선형그라데이션
+  linear-gradient(방향, 시작점색상, 종점색상)
+  사용예)
+  background : lenear-gradient(90deg, #fff, #000);
+  /* 방향에서 0deg가 위쪽방향, 시계방향으로 회전되어 각도 표시 */
+- 원형그라데이션
+  radius-gradient(모양+원중심위치, 시작점색상, 종점색상)
+  사용예)
+  background : radius-gradient(circle at 20% 20%, white, black);
+  /* 원형모양으로 위에서 20%, 왼쪽에서 20% 지점에 중심을 두고, 흰색에서 검정색으로 변화하며 그려줍니다 */
+
+  반응형웹 - 브라우저의 가로사이즈에 따라서 디자인을 자동으로 변경해 주는 것.
+  <meta name="viewport" content="속성"> -> 반응형웹으로 사용하겠다고 브라우저에 알려주는 것
+
+-- 미디어쿼리
+  @media screen abd (min-width: 1200px) {
+    /* 가로가 1200px 이상이면 적용하는 스타일 */
+    선택자 {
+      속성: 속성값; ...
+    }
+  } 
+
+-- 그리드 레이아웃  (블렉서블 박스 레이아웃, CSS 그리드 레이아웃)
 
