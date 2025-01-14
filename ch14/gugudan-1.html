@@ -5,6 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    div {
+      display: inline-block;  /* 같은줄에 여러개 블럭을 표시할 수 있도록 */
+      padding: 0 20px 30px 20px;  /* 내부여백 */
+      margin: 15px; /* 외부 여백 */
+      border: 1px solid #ccc; /* 테두리선 두께, 모양, 색상 */
+      line-height: 2; /* 줄간격 2배 */
+    }
+    div h3 {
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <h1>구구단</h1>
@@ -13,11 +26,13 @@
 
     // 바깥 for문은 2단~9단을 나타냅니다.
     for (i = 2 ; i <= 9 ; i++) {
+      document.write('<div>');
       document.write('<h3>' + i + "단</h3>");
       // 안쪽 for문은 단의 1, 2, ... , 9를 곱한값을 출력합니다.
       for (j = 1 ; j <= 9 ; j++) {
         document.write(i + ' X ' + j + ' = ' + (i*j) + '<br>');
       }
+      document.write('</div>');
     }
   </script>
 </body>
