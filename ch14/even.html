@@ -1,0 +1,26 @@
+<!-- even.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>짝수끼리 더하기</h1>
+  <script>
+    var i;
+    var n = 10;
+    var sum = 0;
+
+    for (i = 1 ; i <= 10 ; i++) {
+      if (i % 2 != 0) continue;// for문 i++로 넘어가세요요
+      sum += i;
+      /*
+      if (i % 2 == 0) sum += i;
+      */
+      document.write(i + "-------" + sum + '<br>');
+    }
+  </script>
+</body>
+</html>

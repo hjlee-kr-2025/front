@@ -1,0 +1,44 @@
+<!-- seat-2.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>자리배치도</h1>
+  <script>
+    // prompt의 입력값은 문자형으로 돌려받습니다.
+    var memNum = prompt("입장객 수를 입력하세요.");
+    var colNum = prompt("한 줄에 앉을 사람 수를 입력하세요.");
+    var rowNum;
+    var seatNo; //좌석넘버 지정을 위한 변수 선언
+
+    // 나머지가 0이면 몫으로 rowNum을 사용하면되고
+    // 나머지가 0이 아니면 계산된 몫에 1을 더해야 합니다.
+    if (memNum % colNum == 0) {
+      // 문자형 변수도 내용이 숫자일때 사칙연산이 가능하고
+      // 계산한 값은 숫자형으로 돌려받습니다.
+      rowNum = parseInt(memNum / colNum);
+    }
+    else {
+      rowNum = parseInt(memNum / colNum) + 1;
+      // parseInt(A) 는 A의 내용을 정수로 바꿔주는 함수 입니다.
+    }
+
+
+    //document.write("모두 " + rowNum + "&nbsp;개의 줄이 필요합니다.");
+    // &nbsp;는 한줄공백을 만드는 html코드입니다.
+
+    for (var i = 0 ; i < rowNum ; i++) {
+      for (var j = 1 ; j <= colNum ; j++) {
+        seatNo = i * colNum + j;
+        if (seatNo > memNum) break;
+        document.write("좌석 " + seatNo + " ");
+      }
+      document.write("<br>");
+    }
+  </script>
+</body>
+</html>

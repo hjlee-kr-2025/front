@@ -1,0 +1,31 @@
+<!-- factorial.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>while 문을 사용한 팩토리얼 계산</h1>
+  <script>
+    var no = prompt("숫자를 입력하세요.");
+    var msg = '';
+
+    if (no != null) {
+      var nFact = 1; // 계산된 값을 저장하는 변수 초기화 및 선언
+      var n = parseInt(no); // 문자형으로 저장되어있는 변수값을 숫자형으로 변경
+
+      while (n > 0) {
+        nFact *= n; // nFact = nFact * n;
+        n--;      // n = n - 1;
+      }
+      msg = no + "! = " + nFact;
+    }
+    else {
+      msg = '값을 입력하지 않았습니다.';
+    }
+    document.write(msg);
+  </script>
+</body>
+</html>
