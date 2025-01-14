@@ -5,6 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    table, th, td {
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+    }
+    td {
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
   <h1>자리배치도</h1>
@@ -30,15 +39,28 @@
 
     //document.write("모두 " + rowNum + "&nbsp;개의 줄이 필요합니다.");
     // &nbsp;는 한줄공백을 만드는 html코드입니다.
-
+    document.write("<table>");
+    /*seatNo = i * colNum + j;*/
     for (var i = 0 ; i < rowNum ; i++) {
+      // 첫번째 줄에서는 1, 2, 3, 4, 5
+      // 줄이 0부터 시작하는 이유는
+      // 줄값이 0이어야 row값으로 번호를 지정할수 있기 때문입니다.
+      // 두번째 줄에서는 6, 7, 8, 9, 10
+      // 줄수가 9라고 했을때
+      // 0 부터 8까지 처리해야 9개의 줄을 표현할 수 있다.
+      document.write("<tr>");
       for (var j = 1 ; j <= colNum ; j++) {
-        seatNo = i * colNum + j;
+        seatNo = i * colNum + j;// 반복적으로 값이 바뀌면서 실행이 되어야 해서 이곳에 배치
+        console.log("i=" + i + ",j=" + j + ",seatNo=" + seatNo);
+        // i==0일때 seatNo => 1, 2, 3, 4, 5
+        // i==1일때 seatNo => 6, 7, 8, 9, 10
         if (seatNo > memNum) break;
-        document.write("좌석 " + seatNo + " ");
+        document.write("<td>좌석 " + seatNo + "</td>");
       }
-      document.write("<br>");
+      //document.write("<br>");
+      document.write("</tr>");
     }
+    document.write("</table>");
   </script>
 </body>
 </html>
