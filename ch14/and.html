@@ -1,0 +1,27 @@
+<!-- and.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 입력창에서 숫자를 입력받아 numberOne에 저장한다.
+    var numberOne = prompt("50미만의 숫자를 입력하세요.");
+    // 입력창에서 숫자를 입력받아 numberTwo에 저장한다.
+    var numberTwo = prompt("50미만의 숫자를 입력하세요.");
+
+    // numberOne이 50미만인 체크, numberTwo가 50미만인지 체크
+    if (numberOne < 50 && numberTwo < 50) {
+      // 둘 모두 50미만이면 이곳을 실행
+      alert("숫자 2개 모두 50미만 입니다.");
+    }
+    else {
+      // 두조건이 중 하나라도 거짓이면 실행
+      alert("잘못입력하셨습니다.");
+    }
+  </script>
+</body>
+</html>

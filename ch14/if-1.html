@@ -1,0 +1,43 @@
+<!-- if-1.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+</head>
+<body>
+  <script>
+    /* if (조건) {
+          참(true)이면 실행할 코드
+        }
+        else {
+          거짓(false)이면 실행할 코드드
+        }
+    */
+  // 입력창을 열고 입력받은값을 userNumber에 저장한다.
+  var userNumber = prompt("숫자를 입력하세요.");
+
+  // userNumber의 값을 웹브라우저 개발자모드의 console창에 출력한다.
+  console.log("userNumber: " + userNumber);
+  
+  // userNumber가 null 이 아닌지 물어보는 조건문문
+  if (userNumber !== null) {
+    // userNumber가 null 이 아니면 실행되는 부분
+    // userNumber를 3으로 나눴을때 나머지가 0인지를 물어보는 조건문
+    if (userNumber % 3 === 0) {
+      // 조건문이 참일때 알림창에 "3의 배수입니다" 안내문구를 보여줍니다.
+      alert("3의 배수입니다.");
+    }
+    else {
+      // 조건문이 거짓일때때
+      alert("3의 배수가 아닙니다.");
+    }
+  }
+  else {
+    // userNumber가 null 이면 실행되는 코드
+    alert("입력이 취소되었습니다.");
+  }
+  </script>
+</body>
+</html>

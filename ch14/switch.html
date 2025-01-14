@@ -1,0 +1,34 @@
+<!-- switch.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문(switch)</title>
+</head>
+<body>
+  <script>
+    // session 변수를 선언하고 입력창에서 숫자를 입력받습니다.
+    var session = prompt("관심 세션을 선택해 주세요. 1-마케팅, 2-개발, 3-디자인");
+
+    console.log(typeof session);
+    console.log("typeof(session) : " + (typeof session));
+    console.log("session : " + session);
+
+    // switch문은 session에 들어있는 값이 맞는것을 check
+    switch (session) {
+      case '1':// session === '1'
+        document.write("<p>마케팅 세션은 <b>201호</b> 에서...");
+        break; // break를 만나면 switch문을 빠져나갑니다.
+      case '2':
+        document.write("<p>개발 세션은 <b>203호</b> 에서...");
+        break;
+      case '3':
+        document.write("<p>디자인 세션은 <b>205호</b> 에서...");
+        break;
+      default:
+        alert('잘못입력하셨습니다.');
+    }
+  </script>
+</body>
+</html>
