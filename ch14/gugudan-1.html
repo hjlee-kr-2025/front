@@ -1,0 +1,24 @@
+<!-- gugudan-1.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>구구단</h1>
+  <script>
+    var i, j;//변수선언시 여러개를 선언할 때 변수명을 ,로 구분하여 줍니다.
+
+    // 바깥 for문은 2단~9단을 나타냅니다.
+    for (i = 2 ; i <= 9 ; i++) {
+      document.write('<h3>' + i + "단</h3>");
+      // 안쪽 for문은 단의 1, 2, ... , 9를 곱한값을 출력합니다.
+      for (j = 1 ; j <= 9 ; j++) {
+        document.write(i + ' X ' + j + ' = ' + (i*j) + '<br>');
+      }
+    }
+  </script>
+</body>
+</html>
