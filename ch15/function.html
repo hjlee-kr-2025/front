@@ -1,0 +1,29 @@
+<!-- function.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 익명함수를 정의와 동시에 실행하도록 만들어주는 코드
+    // 전체를 ()로 감싸고, {}끝에 function에서 정의한 매개변수와 동일하도록 값을 적어줍니다.
+    (function() {
+      var userName = prompt("이름을 입력하세요.");
+      document.write("안녕하세요? <span class='accent'>" + userName + "</span>님!");
+    }());
+
+    var result = (function(n) {
+      let sum = 0;
+      for (let i = 1 ; i <= n ; i++) {
+        sum += i;
+      }
+      return sum;
+    }(10));
+    document.write("1부터 10까지 더하면 " + result + "입니다.");
+  </script>
+  
+</body>
+</html>

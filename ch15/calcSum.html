@@ -1,0 +1,29 @@
+<!-- calcSum.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // calcSum을 정의 했습니다. 매개변수는 1개를 사용했습니다.
+    // 숫자(자연수)매개변수를 넣으면 1부터 넣은숫자까지 더한값을
+    // 다시 되돌려주게 됩니다.
+    function calcSum (n) {
+      let sum = 0;
+      for (let i = 1 ; i <= n ; i++) {
+        sum += i;
+      }
+      return sum;
+    }
+    var no = prompt("1보다 큰 숫자를 입력하세요");
+    // prompt에서 확인버튼을 누를때만 화면에 나오도록 했습니다.
+    if (no != null) {
+      var result = calcSum(no);
+      document.write("<h1>1부터 " + no + "까지 더한 값은 " + result + "입니다.</h1>");
+    }
+  </script>
+</body>
+</html>
