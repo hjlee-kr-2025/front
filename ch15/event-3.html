@@ -1,0 +1,31 @@
+<!-- event-3.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 이벤트</title>
+  <style>
+    p {
+      width: 80%; /* p태그 가로폭이 상위 크기의 80% */
+      padding: 10px;  /* 내부여백 모두 10px */
+      line-height: 2em; /* 줄간격 2글자크기 */
+    }
+  </style>
+</head>
+<body>
+  <button id="change">글자색 바꾸기</button>
+  <p>프로젝트 기반 AWS 풀스택 개발자 과정</p>
+
+  <script>
+    // 방법 1:
+    var changeBtn = document.querySelector("#change");
+    changeBtn.onclick = changeColor;//함수의 ()를 빼고 함수이름만 적어줍니다.
+
+    function changeColor() {
+      // p태그의 글자색을 빨간색으로 변경
+      document.querySelector("p").style.color = "#f00";
+    }
+  </script>
+</body>
+</html>
