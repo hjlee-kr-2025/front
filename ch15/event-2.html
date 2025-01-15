@@ -1,0 +1,60 @@
+<!-- event-2.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a:link, a:visited { /* a태그에 기록된 경로를 방문안한경우, 방문한경우 모두 */
+      color: black; /* a태그 글자색을 검정으로 */
+      text-decoration: none; /* a태그는 기본적으로 밑줄글씨인데 none은 밑줄을 없앤다 */
+    }
+    ul {
+      list-style: none; /* list-style-type: none 과 동일한 명령 */
+      width : 500px; /* ul태그 폭 지정 */
+      margin: 10px auto; /* 위아래 10px 외각여백, 좌우는 자동으로(중앙정렬) */
+      padding: 0; /* 내부여백은 모두 0 (없다) */
+    }
+    li {
+      display: inline-block; /* 필요한 공간만 차지하고, 옆으로 다른 블럭이 올수 있다.*/
+      width: 120px; /* li의 폭 120px */
+      border: 1px solid #ccc; /* 테두리를 1px 직선으로 #ccc색상으로 */
+      padding: 10px 15px; /* 내부여백, 위/아래는 10px, 좌우는 15px */
+      font-size: 16px;  /* 글씨크기 16px */
+      text-align: center; /* 글씨를 가로를 중앙정렬 */
+    }
+    #result {
+      width: 500px;   /* id=result를 가진태그의 폭을 500px로 */
+      height: 300px;  /* 높이를 300px */
+      margin: 30px auto;  /* 외부여백을 위/아래: 30px, 좌우는 자동(중앙정렬) */
+      border: 2px solid #ccc; /* 테두리는 2px 직선 #ccc 색상 */
+      border-radius: 15px; /*  모서리를 15px정도 둥글게 */
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <!-- 태그에 onclick속성에는 마우스를 클릭했을때 해야할 일을 적습니다. -->
+    <li><a href="#" onclick="changeBg('green')">Green</a></li>
+    <li><a href="#" onclick="changeBg('orange')">Orange</a></li>
+    <li><a href="#" onclick="changeBg('purple')">Purple</a></li>
+  </ul>
+  <div id="result"></div>
+
+  <script>
+    // color값을 매개변수로 받는 함수
+    function changeBg(color) {
+      // docoment.querySelector() : 태그객체를 찾는 함수
+      // id="result"인 태그를 찾아서 result에 저장
+      var result = document.querySelector("#result");
+      console.log("변경전 : ");
+      console.log(result);
+      // CSS => background-color
+      // 객체 => backgroundColor : -다음글자를 대문자로 변경합니다.
+      // #result를 가진 박스의 배경색이 변경됩니다.
+      result.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>
