@@ -19,13 +19,26 @@
 
   <script>
     // 방법 1:
-    var changeBtn = document.querySelector("#change");
+/*    var changeBtn = document.querySelector("#change");
     changeBtn.onclick = changeColor;//함수의 ()를 빼고 함수이름만 적어줍니다.
 
     function changeColor() {
       // p태그의 글자색을 빨간색으로 변경
       document.querySelector("p").style.color = "#f00";
     }
+*/
+    // 방법2
+/*    document.querySelector("#change").onclick = changeColor;
+    function changeColor() {
+      // p태그의 글자색을 녹색으로 변경
+      document.querySelector("p").style.color = "#0f0";
+    }*/
+
+    // 방법3 - 명령어를 하나로
+    // "() =>" 부분은 "function()" 과 동일한 명령
+    document.querySelector("#change").onclick = () => {
+      document.querySelector("p").style.color = "#00f";
+    };
   </script>
 </body>
 </html>
