@@ -7,6 +7,30 @@
 	<title>연습문제 2</title>
 </head>
 <body>
-	
+	<script>
+		// num1, num2는 이름을 변경해도 괜찮습니다
+		function compareNumber(num1, num2) {
+			var msg; // 화면에 보여줄 메시지를 담을 변수 선언
+			if (num1 > num2) {
+				msg = num1 + "이(가) " + num2 + "보다 큽니다.";
+			}
+			else if (num1 === num2) {
+				msg = "두 수가 " + num1 + "으로 같습니다.";
+			}
+			else {
+				msg = num2 + "이(가) " + num1 + "보다 큽니다.";
+			}
+			return msg;
+		}
+
+		var num1 = prompt("비교할 첫 번째 숫자:");
+		var num2 = prompt("비교할 두 번째 숫자:");
+
+		// prompt 함수를 통해 입력받는 num1 과 num2를 사용해서
+		// compareNumber 함수를 실행하고 결과를 리턴받습니다.
+		var msg = compareNumber(num1, num2);
+		// 알림창에 결과값을 표시합니다.
+		alert(msg);
+	</script>
 </body>
 </html>

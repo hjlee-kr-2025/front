@@ -7,6 +7,22 @@
 	<title>연습문제 1</title>
 </head>
 <body>
-
+	<script>
+		function sumMulti(x, y) {
+			var result; // 계산값을 저장할 변수 선언
+			if (x === y) { //x와 y의 값과 자료형이 같으면
+				result = x * y;
+			}
+			else {
+				result = x + y;
+			}
+			// 계산한 결과를 돌려줍니다.
+			return result;
+		}
+		// 두 수가 다를때
+		console.log(sumMulti(5, 10));
+		// 두 수가 같을때
+		console.log(sumMulti(10, 10));
+	</script>
 </body>
 </html>
