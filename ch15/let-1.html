@@ -1,0 +1,23 @@
+<!-- let-1.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function calsSum(n) {
+      let sum = 0;
+      // 1부터 n까지 더하도록 처리하는 반복문
+      for (let i = 1 ; i <= n ; i++) {
+        sum += i;
+      }
+      console.log("sum = " + sum);
+      //console.log("i = " + i); let으로 정의한 i는 오류발생
+    }
+    calsSum(10);
+  </script>
+</body>
+</html>

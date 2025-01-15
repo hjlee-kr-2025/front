@@ -1,0 +1,28 @@
+<!-- let-3.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function calsSum(n) {
+      let sum = 0; // sum변수를 선언하고 0을 할당
+      for (let i = 1; i <= n ; i++) {
+        sum += i;
+      }
+      console.log("sum = " + sum);
+      sum = 100;  // sum 100을 재할당 - 변수에 다른값을 넣음
+      console.log("sum = " + sum);
+      // sum을 let을 사용해서 재선언 하면?
+      // 자바스크립트 컴파일러에서 문법오류를 알려줍니다.
+      //let sum = 10;
+      //console.log("sum = " + sum);
+      
+    }
+    calsSum(10);
+  </script>
+</body>
+</html>

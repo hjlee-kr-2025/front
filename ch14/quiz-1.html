@@ -9,7 +9,22 @@
 	<h2>4의 배수 일까, 아닐까</h2>
 
 	<script>
-	
+	var number = prompt("숫자를 입력하세요.");
+	// prompt에서 취소버튼을 누르면 number에 null 값이 저장된다.
+	var msg = '';
+
+	if (number != null) {
+		if (number % 4 == 0) {
+			msg = number + "는 4의 배수 입니다.";
+		}
+		else {
+			msg = number + "는 4의 배수가 아닙니다.";
+		}
+	}
+	else {
+		msg = '입력이 취소되었습니다.';
+	}
+	document.write(msg);
 	</script>
 </body>
 </html>

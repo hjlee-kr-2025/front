@@ -1,0 +1,26 @@
+<!-- addNumber-1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 함수 addNumber를 정의
+    // 매개변수 : num1, num2
+    function addNumber(num1, num2) {
+      // num1과 num2를 더해서 sum에 넣습니다.
+      var sum = num1 + num2;
+      // sum에 들어있는 값을 되돌려줍니다.
+      return sum;
+    }
+
+    // 함수 사용 - addNumber에 2,3을 매개변수에 전달하고
+    // 결과값을 받아서 result 변수에 저장합니다.
+    var result = addNumber(2, 3);
+    document.write("<h1>두 수를 더한 값: " + result + "</h1>");
+  </script>
+</body>
+</html>

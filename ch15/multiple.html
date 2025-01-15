@@ -1,0 +1,38 @@
+<!-- multiple.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // multiple 함수를 정의하고 매개변수는 3개를 사용합니다.
+    function multiple(a, b, c) {
+      // a와 b를 곱하고, c를 더한후 결과를 리턴합니다.
+      return a * b + c;
+    }
+    // 함수정의에서 매개변수를 3개로 정의했기 때문에
+    // 사용할때도 3개의 값을 넘겨주어야 합니다.
+    var result = multiple(5, 10, 20);
+    console.log("result = " + result);
+    // 함수의 매개변수에 기본값(default)을 줄 수 있습니다.
+    function multiple1(a, b = 5, c = 20) {
+      return a * b + c;
+    }
+    // 매개변수값 3개를 사용하면 디폴트값은 무시되고
+    // 매개변수에 사용자가 입력한 값으로 변경되어 처리리
+    result = multiple1(5, 10, 20);
+    console.log("result = " + result); 
+    // 두개만 넣으면 앞에 두값만 바뀌고, 세번째 값은 기본값을 사용합니다.
+    result = multiple1(5, 10);
+    console.log("result = " + result); 
+    result = multiple1(5);
+    // 한개만 넣으면 앞의 한값만 바뀌고, 두번째, 세번째는 기본값사용
+    console.log("result = " + result); 
+
+    // 함수의 기본값을 정의할때 뒤에있는 매개변수부터 정의해 줄 수 있다.
+  </script>
+</body>
+</html>
