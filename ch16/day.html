@@ -31,5 +31,23 @@
     <p><span class="accent" id="result"></span>일 연속으로 <br> 책 읽기를 달성했군요.</p>
     <p>축하합니다!</p>
   </div>
+  <script>
+    var now = new Date("2025-01-16"); //오늘 날짜를 객체로 지정
+    var firstDay = new Date("2024-12-30");  //시작 날짜를 객체로 지정
+
+    var toNow = now.getTime();  // 1970년 1월 1일 자정 이후로 오늘까지 지난시간 msec단위로 리턴해줍니다.
+    var toFirst = firstDay.getTime(); 
+    var passedTime = toNow - toFirst; // passedTime에는 시작일부터 오늘까지시간을 msec값으로 가지고 있습니다. 
+    // msec -> 일
+    // 1000 msec -> 1 sec
+    // 60 sec -> 1 min
+    // 60 min -> 1 hour
+    // 24 hour -> 1 day
+    passedTime = Math.round(passedTime/(1000*60*60*24));
+    // Math.round(A); => A의 값을 반올림해 줍니다.
+    // passedTime => 시작일부터 오늘까지 지난 날짜가 저장됩니다.
+
+    document.querySelector("#result").innerText = passedTime;
+  </script>
 </body>
 </html>
