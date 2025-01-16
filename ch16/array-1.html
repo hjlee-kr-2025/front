@@ -1,0 +1,37 @@
+<!-- array-1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array객체</title>
+</head>
+<body>
+  <script>
+    // Array를 만드는 방법
+    // 1. 초기값이 없는 경우
+    // var number = new Array();  // 크기지정없이 생성
+    // var number = new Array(4); // 크기를 정하고 생성
+    /* var number1 = new Array();
+    var number2 = new Array(4);
+    console.log(number1);
+    console.log(number2);*/
+    // 2. 초기값이 있는 경우
+    /*var numbers1 = ['one', 'two', 'three', 'four'];
+    var numbers2 = Array("one", "two", "three", "four");
+    console.log(numbers1);
+    console.log(numbers2);*/
+    // season 변수를 만들고 배열값 4개를 저장했습니다.
+    var season = ['봄', '여름', '가을', '겨울'];
+
+    document.write("<h1>");
+    // season변수에 들어가 있는 내용을 하나씩 순서대로 꺼내서
+    // 화면에 출력했습니다.
+    // season[0], season[1], season[2], season[3]
+    for (let i = 0 ; i < 4 ; i++) {
+      document.write(season[i] + " ");
+    }
+    document.write("</h1>");
+  </script>
+</body>
+</html>
