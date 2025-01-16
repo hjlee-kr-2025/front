@@ -9,7 +9,8 @@
 <body>
   <p>문서를 열번 팝업창이 표시됩니다.</p>
   <script>
-    window.open("doti-event.html", "pop", "width=750, height=600");
+    var popWin = window.open("doit-event.html", "pop", "width=750, height=600");
+    popWin.creator = self; // popWin을 만든 부모가 self(자신) 임을 알려줍니다.
   </script>
 </body>
 </html>

@@ -18,7 +18,20 @@
   <div class="container">
     <h1>이벤트 공지</h1>
     <img src="../images/doit.jpg">
-    <p><a href="doit-main.html">자세히 보기</a></p>
+    <p><a href="doit-main.html" onclick="loadURL(this.href);return false;">자세히 보기</a></p>
+    <!--
+    a태그의 onclick안에 자바스크립트 코드가 들어 있습니다
+    loadURL 함수를 호출했고,
+    return false;를 수행했습니다.
+    a 태그는 클릭시 페이지를 이동합니다 => href에 적힌 주소로 
+    그런데, return false;의 명령을 주면 페이지 이동을 안합니다.
+    -->
   </div>
+  <script>
+    function loadURL(url) {
+      window.creator.location = url; //부모창의 location에 url을 넘겨준다.
+      window.close(); //popup창(doit-event.html)을 닫습니다. 
+    }
+  </script>
 </body>
 </html>
