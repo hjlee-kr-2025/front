@@ -1,0 +1,44 @@
+<!-- array-4.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array객체</title>
+</head>
+<body>
+  <p>splice() 메서드 사용하기</p>
+  <script>
+    // splice - 배열내용을 삭제 or 변경하는 메서드
+    // 인수(파라메터의 들어가는 값)가 1개인 경우
+    // 들어가는 값이 인덱스
+    // 인덱스 ~ 배열끝까지를 return해주고, 리턴된것은 삭제
+    var numbers = [1, 2, 3, 4, 5];
+    var newNumbers = numbers.splice(2);
+    document.write("반환한 배열 : " + newNumbers + "<br>");
+    document.write("변경된 배열 : " + numbers);
+
+    document.write("<hr>");
+    // 인수가 2개일경우
+    // 처음에 적힌 인덱스에서부터 삭제할 개수를 두번째에 적어서 사용합니다.
+    var study = ["html", "css", "web", "javascript"];
+    var newStudy = study.splice(2, 1);
+    document.write("반환한 배열 : " + newStudy + "<br>");
+    document.write("변경된 배열 : " + study);
+    document.write("<hr>");
+
+    // 인수가 3개이상상인 경우
+    // study = ["html", "css", "javascript"]
+    // 첫번째 인텍스에서 두번째 숫자만큼 삭제하고, 세번째 값 이후는 삭제한곳에 추가됩됩니다.
+    var newStudy2 = study.splice(1, 1, "js");
+    document.write("반환한 배열 : " + newStudy2 + "<br>");
+    document.write("변경된 배열 : " + study);
+    // splice 정리
+    // splice(인덱스); - 인덱스부터 끝까지 삭제
+    // splice(인텍스, 숫자); - 인덱스부터 숫자만큼 삭제
+    // splice(인덱스, 숫자, 추가값, ...);
+    // 인덱스부터 숫자만큼 삭제하고, 삭제된 위치에 추가값들이 배열에 저장됩니다.
+
+  </script>
+</body>
+</html>

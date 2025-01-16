@@ -1,0 +1,28 @@
+<!-- array-5.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array객체</title>
+</head>
+<body>
+  <script>
+    // slice() 메서드
+    // 배열안의 값을 꺼내옵니다.
+    // 배열이 변경되지 않습니다.
+    // 인수가 1개인 경우 - 적힌값은 인덱스 입니다.
+    var colors = ["red", "green", "blue", "white", "black"];
+    var colors2 = colors.slice(2);//인덱스부터 끝까지를 배열로 리턴해줍니다.
+    document.write("<h1>" + colors2 + "</h1>");
+
+    // 인자가 2개인 경우
+    var colors3 = colors.slice(2, 4);
+    // 첫번째 적힌 인덱스 부터, 두번째 적힌 인덱스 전까지(두번째적힌 인덱스포함X) 배열로 리턴합니다.
+    document.write("<h1>" + colors3 + "</h1>");
+
+    // 배열과 같은 인덱스가 있는 자료형에서 두개의 인덱스를 필요로하는 메서드는 첫번째는 시작인덱스, 두번째는 종료인덱스입니다. (시작 ~ 종료까지 배열로 리턴하는데, 시작은 포함, 종료는 포함안됨)
+
+  </script>
+</body>
+</html>
