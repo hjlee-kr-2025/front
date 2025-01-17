@@ -1,0 +1,27 @@
+<!-- inner.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>innerText, innerHTML</title>
+</head>
+<body>
+  <button onclick="inntext()">innerText로 표시하기</button>
+  <button onclick="innhtml()">innerHTML로 표시하기</button>
+  <h1>현재 시각 : </h1>
+  <div id="current"></div>
+
+  <script>
+    var now = new Date();
+    function inntext() {
+      document.getElementById("current").innerText = "<em>" + now + "</em>";
+    }
+    function innhtml() {
+      document.getElementById("current").innerHTML = "<em>" + now + "</em>";
+    }
+    // innerHTML은 태그를 적으면 브러우저가 해석시 태그로 인식하고
+    // innerText에 태그를 적으면 텍스트로 인식해서 화면에 보여주게 됩니다.
+  </script>
+</body>
+</html>

@@ -6,14 +6,14 @@
   <title>현재 시각은?</title>
   <style>
     p {
-      margin-top:20px;
-      font-size:1.2em;
-      text-align: center;
+      margin-top:20px; /* 외부여백 위쪽만 20px */
+      font-size:1.2em;  /* 글씨크기 1.2배*/
+      text-align: center; /* 정렬 : 가운데 정렬 */
     }
     .display {
-      font-size:1.5em; 
-      font-weight:bold;
-      color:blue;
+      font-size:1.5em; /* 글씨크기: 1.5배 */
+      font-weight:bold; /* 굵은 글씨로 */
+      color:blue; /* 폰트 색상 */
       /* text-align:center; */
     }
   </style>
@@ -22,9 +22,11 @@
   <p>현재 시각 <span id="current" class="display"></span></p>
   <script>
     setInterval(displayNow, 1000);  // 1초마다 시간 계산 함수 실행
+    // setInterval(함수이름, 반복시간 msec단위);
 
     function displayNow() {  // 시간 계산 함수
-      
+      var now = new Date();// Date객체를 생성, 인수가 없으면 현재시간을 받아옵니다.
+      var currentTime = now.toLocaleTimeString(); //현재지역 표현방식으로 만들어 주는 메서드 입니다.
 
       document.querySelector("#current").innerHTML = currentTime;   // id="current" 인 요소에 현재 시간 표시
     }

@@ -1,0 +1,31 @@
+문서 객체 모델 (DOM - Document Object Model)
+
+DOM 을 구성하는 기본원칙
+1. 모든 HTML 태그는 요소(element)노드입니다.
+2. HTML 태그에서 사용하는 텍스트내용은 자식노드인 텍스트노드입니다.
+
+<span class="accent" id="result"></span>
+document.querySelector("#result").innerText = passedTime;
+
+3. HTML 태그에 있는 속성은 자식노드인 속성노드입니다.
+4. 주석은 주석노드입니다. => 주석은 신경안쓰셔도 됩니다.
+
+DOM에 접근하는 방법
+querySelector(A);
+- A에 들어갈수 있는 값은 태그, #id값, .클래스값
+- 가장 먼저 만나는 element를 리턴합니다.
+querySelectorAll(A);
+- 같은 태그 또는 클래스값을 갖는 모든 element를 리턴합니다.
+
+getElementById(A);
+- A에는 id값이 들어갑니다. 앞에 #을 붙이지 않습니다.
+
+getElementsByClass(A);
+- A에는 클래스값이 들어갑니다. 앞에 .을 붙이지 않습니다.
+- A이름을 가진 클래스들을 HTMLCollection 객체에 저장합니다.
+- 사용할때는 배열처럼 사용하면 됩니다.
+- 1개가 있다고 하더라도 배열처럼 [0]을 지정해서 사용해야 합니다.
+
+getElementsByTagName(A);
+- A에는 태그이름이 들어갑니다.
+- HTMLCollection 객체에 저장되고, 배열처럼 사용합니다.

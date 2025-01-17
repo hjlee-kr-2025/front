@@ -25,7 +25,10 @@
     document.getElementById('bttn').onclick = displayTime;
 
     function displayTime(){        
-
+      var left = (screen.availWidth - 400) / 2; // 가로의 중앙에 오도록
+      var top = (screen.availHeight - 200) /2; // 세로의 중앙에 오도록
+      var opt = "left=" + left + ",top=" + top + ",width=400,height=200";
+      window.open("current.html", "pop", opt); 
     }
   </script>
 </body>
