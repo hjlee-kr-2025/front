@@ -1,0 +1,33 @@
+<!-- event-2.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="../images/cup-1.png" id="cup">
+  </div>
+  <script>
+    var cup = document.querySelector("#cup"); // id='cup'인 element
+    cup.onclick = changePic;  //cup를 클릭하면 changePic()가 실행됩니다.
+
+    function changePic() {
+      cup.src = "../images/cup-2.png"; // id='cup' 의 이미지를 변경한다.
+      // 여기서는 cup대신에 this를 사용해도 됩니다.
+      // 이벤트가 발생한 곳과 변경해야할 곳이 같으면 this를 사용해도 됩니다.
+    }
+
+
+
+  </script>
+</body>
+</html>

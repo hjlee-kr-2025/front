@@ -1,0 +1,29 @@
+<!-- event-3.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="../images/cup-1.png" id="cup">
+  </div>
+  <script>
+    var cup = document.querySelector("#cup"); // id='cup'인 element
+    cup.onclick = (event) => {
+      alert("이벤트 유형 : " + event.type + ", 이벤트 발생 위치 : " + event.pageX + ", " + event.pageY);
+    }
+    // event객체의 주요 프로퍼티와 메서드는 P614, 표 17-1을 참고하세요
+    // event.preventDefault() - 현재 이벤트가 끝나고 다른 이벤트가 있을때 하지 않도록 해 줍니다.
+    // 예) <a></a> 태그의 click이벤트가 발생되었을때 click이벤트가 끝나고 다른페이지로 이동을 하는데 click이벤트 함수 안에 event.preventDefault(); 가 있으면 다른페이지로 이동하지 않습니다.
+  </script>
+</body>
+</html>

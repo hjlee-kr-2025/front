@@ -115,6 +115,8 @@
         <li>로스팅 : 2025.01.16</li>
         <button>장바구니 담기</button>
       </ul>
+      <!-- event 지정하는 방법 1 -->
+      <!-- <a href="#" id="view" onclick="showDetail()">상세 설명 보기</a> -->
       <a href="#" id="view">상세 설명 보기</a>
     </div>  <!-- end of id="desc" -->
     <div id="detail">
@@ -151,6 +153,13 @@
       // addEventListener("이벤트", 함수이름);
       // 이벤트에는 앞에 on을 빼고 사용합니다.
       // 함수이름은 ()는 빼고 적습니다.
+    }
+
+    // event를 사용하는 방법 2
+    document.getElementById("view").onclick = () => {
+      console.log("click event");
+      document.getElementById("detail").style.display = "block";
+      //document.querySelector("#detail").style.display = "block";
     }
 
     function changePic() {
