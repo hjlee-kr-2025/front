@@ -20,7 +20,7 @@ querySelectorAll(A);
 getElementById(A);
 - A에는 id값이 들어갑니다. 앞에 #을 붙이지 않습니다.
 
-getElementsByClass(A);
+getElementsByClassName(A);
 - A에는 클래스값이 들어갑니다. 앞에 .을 붙이지 않습니다.
 - A이름을 가진 클래스들을 HTMLCollection 객체에 저장합니다.
 - 사용할때는 배열처럼 사용하면 됩니다.
