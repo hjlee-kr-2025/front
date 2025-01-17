@@ -1,0 +1,29 @@
+<!-- event-4.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 300px;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="../images/cup-1.png" id="card">
+  </div>
+  <script>
+    var card = document.querySelector("#card");
+    card.onclick = function (event) {
+      console.log(this);
+      alert("클릭한 이미지 파일 : " + this.src);
+    }
+    // 화살표 함수 ()=> {} 에서는 this를 사용하지 못합니다.
+    // this를 사용하고 싶으면 함수를 function으로 만들어 주세요.
+  </script>
+</body>
+</html>

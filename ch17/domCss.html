@@ -1,0 +1,46 @@
+<!-- domCss.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    #rect {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #222;
+      margin: 30px auto;
+      transition: 1s;/* css가 변경될 때 걸리는 시간, 여기서는 1초 */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>도형 위로 마우스 포인터를 올려놓으세요.</p>
+    <div id="rect"></div>
+  </div>
+  <script>
+    var myRect = document.querySelector("#rect");
+    myRect.addEventListener("mouseover", function () {
+      myRect.style.backgroundColor = "green"; //배경색을 green으로 변경
+      myRect.style.borderRadius = "50%"; // 테두리를 원형으로
+    })
+    myRect.addEventListener("mouseout", function () {
+      myRect.style.backgroundColor = "";  // 원래 값으로 변경
+      myRect.style.borderRadius = ""; // 원래 값으로 변경
+    })
+    // CSS를 변경할때
+    // 선택한객체.style.스타일속성 = "스타일값";
+    // 스타일속성은 -가 나오면 -를 없애고 -다음글자를 대문자로 변경합니다.
+    // 예) background-color => backgroundColor
+    // border-radius => borderRadius
+    // font-size => fontSize
+  </script>
+</body>
+</html>
