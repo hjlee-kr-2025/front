@@ -146,6 +146,7 @@ button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
+/* 본문 */
 #contents {
   width: 100%; /* .container의 width: 1200px */
   height: 300px;
@@ -153,8 +154,40 @@ button:hover {
 #tabMenu {
   width: 600px;
   height: 300px; /* 부모태그와 동일 */
-  background-color: pink;
+/*  background-color: pink; */
   float: left;
+}
+#tabMenu input[type='radio'] {
+  display: none; /* 라디오버튼을 감춥니다 */
+}
+/* 탭제목 스타일 지정 */
+#tabMenu label {
+  display: inline-block;
+  margin: 0;
+  padding: 15px 25px;
+  font-weight: 700;
+  text-align: center;
+  color: #aaa;
+  border: 1px solid transparent;
+}
+/* 탭제목에 마우스 올라갈 때 */
+#tabMenu label:hover {
+  color: #222;
+  cursor: pointer;
+}
+/* input태그중 checked되어있는 element 옆에 있는 label 중 처음만나는 element */
+#tabMenu input:checked + label {
+  color: #b00;
+  border: 1px solid #bbb;
+  background-color: #eee;
+}
+.tabContents {
+  padding: 20px 0 0 0;
+  border-top: 1px solid #ddd;
+}
+#notice ul {
+  list-style: disc;
+  margin-left: 30px;
 }
 #links {
   width: 600px;
