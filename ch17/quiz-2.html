@@ -29,12 +29,68 @@
 	</style>
 </head>
 <body>
-	<form>
+	<form> <!-- 서버에 값을 전달, 사용자로 부터 값을 받아오는 용도 -->
+		<!-- input 태그의 값은 value 속성에 담깁니다. -->
 		<input type="text" id="rCount" value="1">행
 		<input type="text" id="cCount" value="1">열
+		<!--
+		button 클릭스 drawTable() 실행되고 return false;는 페이지 이동이 안되도록 해줍니다.
+		-->
 		<button onclick="drawTable(); return false;">작성</button>
 	</form>
+	<!-- table을 배치할 장소로 만들어 놓은것 -->
 	<div id="contents"></div>
+
+	<script>
+		function drawTable() {
+			// id='rCount'의 value값 - 행
+			var rCount = document.querySelector("#rCount").value;
+			// id='cCount'의 value값 - 열(셀셀)
+			var cCount = document.querySelector("#cCount").value;
+
+			console.log("rCount= " + rCount);
+			console.log("cCount= " + cCount);
+			// table element를 생성
+			var newTable = document.createElement("table");
+			for (let i = 0 ; i < rCount ; i++) {
+				// tr element를 생성 - rCount만큼 반복
+				var newRow = document.createElement("tr");
+				for (let j = 0 ; j < cCount ; j++) {
+					// td element를 생성 - cCount만큼 반복
+					var newCell = document.createElement("td");
+					// td안에 넣은 textNode를 생성
+					var cellText = document.createTextNode(i + ", " + j);
+					// textNode를 td에 연결
+					newCell.appendChild(cellText);
+					// 셀을 tr에 연결합니다.
+					newRow.appendChild(newCell);
+				}
+				// 행을 table에 연결합니다.
+				newTable.appendChild(newRow);
+			}
+			// 테이블완성
+			// id='contents'를 찾는다.
+			var contents = document.querySelector("#contents");
+			// table을 id='contents' element에 연결시킨다.
+			contents.appendChild(newTable);
+			console.log("drawTable()--");
+		}
+	</script>
+	<!--
+	<div id="contents">
+		<table>
+			<tr>
+				<td>0, 0</td>
+				<td>0, 1</td>
+			</tr>
+			<tr>
+				<td>1, 0</td>
+				<td>1, 1</td>
+			<tr>
+		</table>
+	</div>
+	
+	-->
 
 </body>
 </html>
