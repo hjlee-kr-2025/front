@@ -1,7 +1,17 @@
+/* css 파일은 <style></style> 태그 안에 기록된다고 생각하고 코드를 작성하시면 됩니다 */
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+
+/* 전체 설정 */
 * {
   margin: 0; /* 전체 외부여백 0 */
   padding: 0; /* 전체 내부여백 0 */
   box-sizing: border-box; /* 박스영역 테두리까지 */
+}
+
+/* a태그 밑줄글씨 제거 */
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -19,8 +29,19 @@ header {
 #logo {
   width: 250px;
   height: 100px;/*header 와 동일 */
-  background-color: violet;
+  /*background-color: violet;*/
   float: left;/* #logo nav를 한줄에 배치 : logo는 왼쪽에 */
+  line-height: 100px;/* h1태그가 세로 중앙에 오도록 설정 */
+  padding-left: 10px;
+}
+#logo a h1 {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #fff;
+  text-shadow: 0 -1px 0 #222;
+  font-size: 40px;
 }
 /* 네비게이션 */
 nav {
