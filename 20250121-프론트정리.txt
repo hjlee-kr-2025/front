@@ -309,5 +309,90 @@ height 속성 : 세로크기지정
 - 표와 셀의 테두리를 합칩니다.
   -> border-collapse: collapse; (통채로 알아두세요)
 
-[[[[[ ch08 ]]]]]
+[[[[[ ch08 ]]]]] CSS 박스 모델
+- 블록레벨요소 / 인라인레벨요소
+  => 블록레벨요소 : 1줄을 전부 차지합니다.
+  => 인라인레벨요소 : 옆으로 배치가 가능합니다.
+
+margin - border - padding - 콘텐츠
+- 콘텐츠 영역의 크기를 지정하는 속성
+  => width : 폭크기; height : 높이크기;
+- width와 height로 설정한 값의 영역지정
+  => box-sizing: content-box(기본) | border-box;
+                 콘텐츠만 | 테두리까지
+- box모델에 그림자 효과 (p246)
+  => box-shadow: <수평거리> <수직거리> <흐림정도> <번짐정도> <색상>;
+- 테두리의 스타일 지정
+  => border-style: none(기본값) | solid | dotted | dashed | double;
+                      (없음   |  실선  | 점선   | 짧은실선 | 이중선)
+- 테두리 두께
+  => border-width: <크기>;
+  => 4방향을 다르게 설정할 수도 있습니다. (위 오른쪽 아래 왼쪽순)
+    예) border-width: 1px 2px 3px 4px;
+- 테두리 색상
+  => border-color: <컬러값>;
+  => 4방향을 다르게 설정할 수 있습니다.
+- 테두리 스타일 한번에 설정
+  => border: 1px solid red; -> 1px 두께의 빨간색실선으로 테두리를 그려줍니다.
+- 테두리를 둥글게
+  => border-radius: <크기> | <백분율>;
+  => 원형으로 만들려면 정사각형의 콘텐츠에 border-radius: 50%; 로 설정하면 됩니다.
+- 외부여백설정
+  => margin: <값>;
+  => 4방향 각각 지정가능
+  margin; 0 auto; /* 가운데 정렬 하고자 할때 이렇게 많이 사용합니다 */
+  2개의 값을 지정하면 앞의 값은 위/아래여백, 두번째값은 좌/우여백 설정입니다.
+  => 위, 아래여백은 중첩적용되어 두요소중 큰값으로 설정됩니다.
+- 내부여백설정 (테두리와 콘텐츠사이의 여백) 
+  => padding: <값>;
+  margin과 padding다음에 -top, -bottom, -left, -right를 사용해서 각각 설정이 가능합니다.
+  예) 위 외부여백 10px 설정 => margin-top: 10px;
+- 배치방법을 설정하는 속성
+  => display: block | inline | inline-block | none;
+       (블록레벨요소 | 인라인레벨요소 | 인라인 | 안보이도록)
+- 오른쪽이나 왼쪽으로 배치하는 속성
+  => float: left | right;
+        (왼쪽배치 | 오른쪽배치)
+- float 해제
+  => clear: left | rigth | both;
+- 웹요소의 위치를 지정하는 속성4가지
+  => left, right, top, bottom => 기준으로부터 얼마나 떨어져 있는지를 설정합니다. 예를들어 left:10px; 으로 설정하면 기준위치에서 왼쪽으로 10px 만큼 떨어지 있다는 이야기 입니다.
+  left와 right는 동시에 설정하지 않고, top과 bottom도 동시에 설정하지 않습니다.
+- 배치방법을 지정하는 속성
+  => position: static(기본) | relative | absolute | fixed;
+    (기본 | 상대위치 |  상위<상대위치> 기준 절대위치 | 브라우저기준)
+
+[[[[[ ch09 ]]]]]  배경 (background)
+- 배경색을 지정하는 속성
+  => background-color: <색상값>;
+- 배경색 범위
+  => background-clip: border-box | padding-box | content-box;
+                   (테두리까지 | 패딩영역까지 | 콘텐츠만)
+- 배경이미지
+  => background-image: url("이미지 파일 경로");
+- 배경이미지 반복
+  => background-repeat: repeat(기본) | repeat-x | repeat-y | no-repeat;
+    (전체그려줄때까지 반복 | x축으로만 반복 | y축으로만반복 | 1장사용)
+- 배경이미지 위치 설정
+  => background-position: <수평위치> <수직위치>;
+    수평위치 = left | right | center | <백분율> | <길이값>;
+    수직위치 = top | bottom | center | <백분율> | <길이값>;
+- 배경이미지 표시 범위 설정
+  => background-origin: border-box | padding-box | content-box;
+- 배경이미지를 스크롤했을때 고정시키려면?
+  => background-attachment: fixed; (기본값은 scroll)
+- 배경이미지 한번에 설정 (사용예)
+  => background: url('이미지경로') no-repeat center bottom fixed;
+- 배경이미지 크기를 조절
+  => background-size: auto(기본) | contain | cover | <크기값> | <백분율>;
+  -> 두개의 크기값또는 백분율을 사용해서 가로, 세로를 동시에 설정할 수 있습니다.
+  contain : 이미지크기의 길이가 긴쪽을 설정값에 맞추고 다른값은 비유로 조절합니다. 공백이 보일수도 있습니다.
+  cover : 짧은쪽을 설정값에 맞춥니다. 그래서 화면은 꽉차지만 긴쪽의 이미지가 잘릴수도 있습니다.
+  contain과 cover의 설명은 p302 그림9-5를 살펴보시면 이해가 되실 것입니다.
+- 선형 그라데이션
+  => line-gradient(to <방향> 또는 <각도>, 시작색상 끝색상);
+  사용예) line-gradient(to right bottom, blue, white);
+      오른쪽 아래방향으로 파란색에서 흰색으로 변경된 색상을 표현
+- 원형 그라데이션
+  => radial-gradient(모양 위치, 중심색상, 중간색상, 끝색상);
 
