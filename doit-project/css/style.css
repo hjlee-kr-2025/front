@@ -184,10 +184,24 @@ button:hover {
 .tabContents {
   padding: 20px 0 0 0;
   border-top: 1px solid #ddd;
+  display: none;/* 처음에 안보이도록 */
 }
 #notice ul {
   list-style: disc;
   margin-left: 30px;
+}
+#notice ul li {
+  line-height: 2.5;
+  font-size: 16px;
+}
+#gallery ul li {
+  display: inline;/* 옆으로 배치 */
+}
+.tabContents h2 {
+  display: none;
+}
+#tab1:checked ~ #notice, #tab2:checked ~ #gallery {
+  display: block;
 }
 #links {
   width: 600px;
