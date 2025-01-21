@@ -143,7 +143,7 @@ button {
   color: #000;  /* 화살표 컬러 */
   font-weight: 800;
   font-size: 24px;
-  opacity: 0.5; /* 반투명 */
+  opacity: 0.5; /* 화살표 반투명 : 1.0이 불투명*/
 }
 #prev { /* 이전 버튼 */
   left: 0;
@@ -158,10 +158,10 @@ button:hover {
   cursor: pointer;
 }
 /* 본문 */
-#contents {
+#contents { /* 전체역역을 box */
   width: 100%; /* .container의 width: 1200px */
   height: 300px;
-  margin-top: 30px;
+  margin-top: 30px;/* slideShow 부분과 간격을 30px */
 }
 #tabMenu {
   width: 600px;
@@ -174,7 +174,10 @@ button:hover {
 }
 /* 탭제목 스타일 지정 */
 #tabMenu label {
-  display: inline-block;
+  display: inline-block;/* 옆으로 배치되도록 */
+  /* inline과 inline-block은 옆으로 배치되도록 하는 설정인데
+  inline은 크기 설정 불가능, inline-block는 크기 설정 가능
+  */
   margin: 0;
   padding: 15px 25px;
   font-weight: 700;
@@ -200,10 +203,10 @@ button:hover {
 }
 #notice ul {
   list-style: disc;
-  margin-left: 30px;
+  margin-left: 30px;/* 들여쓰기효과 */
 }
 #notice ul li {
-  line-height: 2.5;
+  line-height: 2.5;/* 라인간격 크게 */
   font-size: 16px;
 }
 #gallery ul li {
