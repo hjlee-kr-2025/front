@@ -150,6 +150,7 @@ button:hover {
 #contents {
   width: 100%; /* .container의 width: 1200px */
   height: 300px;
+  margin-top: 30px;
 }
 #tabMenu {
   width: 600px;
@@ -203,12 +204,48 @@ button:hover {
 #tab1:checked ~ #notice, #tab2:checked ~ #gallery {
   display: block;
 }
+/* 퀵링크 */
 #links {
   width: 600px;
   height: 300px;
-  background-color: aqua;
+/*  background-color: aqua;*/
   float: right;
 }
+#links ul {
+  padding: 0;/* 내부여백 없이 */
+  overflow: hidden; /* 넘치는 부분 안보이도록 */
+}
+#links ul li {
+  float: left;/* 왼쪽부터 가로로 배치 */
+  width: 33%; /* 3개를 3등분 배치 - 균등한 공간사용하여 배치할때는 %를 활용합니다. */
+  text-align: center;
+  margin: 10px 0; /* 위/아래만 외부여백 10px */
+}
+/* 이미지가 들어갈 영역의 style */
+#links ul li a span {
+  display: block;/* 한줄영역으로 변경 */
+  margin: 0 auto;/* 가운데 정렬 */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;/* 정사각형에 50%를 주면 원이 됩니다. */
+  border: 1px solid #ddd;/* 연한 테두리 */
+  line-height: 150px;/* height와 같은값을 설정하면 수직의 중간으로 옵니다. */
+}
+#quick-icon1 {
+  background-image: url('../images/icon-1.jpg');
+}
+#quick-icon2 {
+  background-image: url('../images/icon-2.jpg');
+}
+#quick-icon3 {
+  background-image: url('../images/icon-3.jpg');
+}
+#links ul li a p {
+  margin-top: 15px;
+  font-weight: 700;
+  color: #888;
+}
+/* 푸터 */
 footer {
   width: 100%;
   height: 100px;
