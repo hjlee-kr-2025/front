@@ -1,4 +1,5 @@
 /* css 파일은 <style></style> 태그 안에 기록된다고 생각하고 코드를 작성하시면 됩니다 */
+/* google 폰트를 css에 포함 */
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
 
 
@@ -7,20 +8,22 @@
   margin: 0; /* 전체 외부여백 0 */
   padding: 0; /* 전체 내부여백 0 */
   box-sizing: border-box; /* 박스영역 테두리까지 */
+  /* border-box: 테두리까지, content-box: 콘텐츠까지-padding부분부터 제외 */
 }
 
-/* a태그 밑줄글씨 제거 */
+/* html문서 전체의 a 태그: 밑줄글씨 제거 */
 a {
   text-decoration: none;
 }
 
-/* ul 태그 블릿 없앰 */
+/* html문서 전체의 ul 태그: 블릿 없앰 */
 ul {
-  list-style: none;
+  list-style: none; /* list-style-type: none */
 }
-
+/* 내용전체를 class='container'로 둘러싸고, 폭: 1200px로 가운데 정렬이 되도록 만들었습니다 */
 .container {
   margin: 0 auto; /* 가운데 정렬 */
+  /* margin-left: auto; margin-right: auto; */
   width: 1200px;
 }
 
@@ -37,31 +40,35 @@ header {
   /*background-color: violet;*/
   float: left;/* #logo nav를 한줄에 배치 : logo는 왼쪽에 */
   line-height: 100px;/* h1태그가 세로 중앙에 오도록 설정 */
-  padding-left: 10px;
+  padding-left: 20px;/* 왼쪽 여백 - 글씨 들여쓰기 */
 }
 #logo a h1 {
+  /* 웹폰트 적용 */
   font-family: "Merienda", serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+  /* 글자 색상 */
   color: #fff;
+  /* 그림자 효과 */
   text-shadow: 0 -1px 0 #222;
+  /* 글씨 크기 */
   font-size: 40px;
 }
-/* 네비게이션 */
+/* 네비게이션 - 메인메뉴, 서브메뉴 */
 nav {
   width: 900px;
   height: 100px; /*header 와 동일 */
 /*  background-color: green; */
   float: right;/* #logo nav를 한줄에 배치 : nav는 오른쪽에 */
-  padding-top: 50px;
+  padding-top: 50px;  /* id='topMenu'가 50px아래에 배치 */
 }
 #topMenu {
-  height: 50px;
+  height: 50px;/* 100px에서 여백 50px을 제외한 값으로 설정 */
 }
 #topMenu > li {
-  float: left;
-  position: relative;
+  float: left;/* 왼쪽부터 옆으로 배치 */
+  position: relative;/* 자식태그를 absolute로 사용할때 부모태그를 relative로 지정합니다 - absolute의 기준점이 relative입니다. */
 }
 #topMenu > li > a {
   /* 메인메뉴 4가지 */
@@ -85,7 +92,7 @@ nav {
   left: 20px;
   margin: 0;
 }
-/* 서브메뉴 위치 */
+/* 서브메뉴(텍스트) 위치 */
 #topMenu > li > ul > li {
   padding: 10px 10px 10px 30px;
 }
@@ -116,9 +123,13 @@ nav {
 }
 #slides {
   position: absolute;
+  /* id=#slideShow영역안에서 배치되도록
+  부모태그- position: relative; overflow: hidden;
+  자식태그- position: absolute;
+  */
 }
 #slides > img {
-  width: 100%;
+  width: 100%;  /* 폭을 부모태그와 동일 */
   float: left; /* 가로로 배치 */
 }
 button {
