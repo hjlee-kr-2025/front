@@ -305,5 +305,78 @@ setAttribute("속성", "속성값");
     alert("이미지를 클릭했습니다.");
   }
 
-** DOM의 event객체
+** DOM의 event객체 (p614)
+  var cup = document.querySelector("#cup");
+  cup.onclick = function(event) {
+    alert("이벤트 유형: " + event.type + ", 이벤트 발생 위치: " + event.pageX + ", " + event.pageY);
+  }
+
+** this 예약어 - 이벤트가 발생된 element를 가르킵니다.
+  var cup = document.querySelector("#cup");
+  cup.onclick = function() {
+    alert("사용하는 이미지: " + this.src);// img태그에 있는 이미지 경로가 알림창에 보여지게 됩니다.
+  }
+
+** addEventListener() 메서드 : 이벤트를 연결해주는 역할을 합니다.
+  var cup = document.querySelector("#cup");
+  cup.addEventListener("click", clickImg);
+  // cup객체(이미지)를 클릭하면 clickImg함수가 실행됩니다.
+  // 이벤트 등록시 on이 빠지고 이벤트 이름만 들어갑니다.
+  function clickImg() {/* 함수정의 */
+    alert("이미지를 클릭했습니다.");
+  }
+
+addEventListener() 메서드를 사용했을때 장점
+- addEventListener로 검색하면 사용하는 이벤트를 빨리 검색할 수 있습니다.
+
+* addEventLister 에 익명함수로 연결하기
+  cup.addEventListener("click", function() {
+    alert("이미지를 클릭했습니다.");
+  });
+
+***** DOM 에서 노트 추가, 삭제하기
+1. 노드 만들고 추가(연결)하기
+  a) createElement("태그명")
+  b) createTextNode("텍스트")
+  c) 속성은 element가 있어야 적용할 수 있다.
+  현재 HTML문서
+  <body>
+    <div id="info"></div>
+    <script>
+      // element node 만들기
+      var newP = createElement("p"); // p태그를 사용한 element를 만듭니다. <p></p>
+      // text node 만들기
+      var newText = createTextNode("새로운 문장을 만들었습니다.");
+      // newP 안에 newText를 연결시킵니다.
+      newP.appendChild(newText); // <p>새로운 문장을 만들었습니다</p>
+      // id='info'안에 newP를 연결합니다.
+      document.getElementById("info").appendChild(newP);
+      // => <div id="info><p>새로운 문장을 만들었습니다.</p></div>
+
+    </script>
+  </body>
+document.getElementById("info").appendChild(newP);
+는
+var info = document.getElementById("info");
+info.appendChild(newP);
+와 동일한 명령입니다.
+
+2. 노드 삭제하기
+===> 노드는 스스로 삭제할 수 없습니다. 부모태그(element)에서 자식태그(element)를 삭제해야 합니다.
+예)
+  <ul id="studyList">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JAVASCRIPT</li>
+  <ul>
+  ===> 글자를 클릭시 리스트 내용이 삭제되도록 만들어봅니다.
+  var items = document.querySelectorAll("li");
+  for (let i = 0 ; i < items.length ; i++) {
+    items[i].addEventListener("click", function() {
+      if (this.parentNode) { // 부모노드가 있으면
+        // 부모노드에서 자신을 삭제 합니다.
+        this.parentNode.removeChild(this);
+      }
+    });
+  }
 
