@@ -208,3 +208,30 @@ var sum = (number1, number2) => {
   }
   </script>
 
+[[[[[ ch16 ]]]]] 자바스크립트와 객체(Object)
+객체 - 속성(변수) + 동작(함수)이 들어있는 요소
+--- 내장객체
+* Array 객체
+var numbers = new Array();
+var numbers = new Array(4);
+var numbers = [];
+var numbers = ['one', 'two', 'three', 'four'];
+가장많이 쓰는 속성
+numbers.length : numbers안에 몇개의 방이 있는지 알려줍니다.
+Array 메서드의 내용은 P559 부터 설명이 되어있습니다.
+표16-1 중 indexOf(): 문자열에서 특정단어를 찾을때 많이 사용합니다.
+문자열도 하나의 배열로 처리할 수 있습니다.
+var name="abcdefghijklmn";
+name[2]; => c 를 가르킵니다.
+name.length; => 14를 돌려줍니다.
+name.indexOf("efg"); 일치되는 문자열을 찾고 첫인덱스를 돌려줍니다.
+여기서는 4를 돌려줍니다.
+만약에 일치하는 값이 없으면? -1을 돌려줍니다.
+
+*** 브라라우저와 관련된 객체
+window객체
+- 화면에 관계된 내용을 확인할 때 주로 사용됩니다.
+- 팝업창을 만들거나 브라우저를 열어서 위치를 지정할 때 사용할 수 있습니다.
+- document, screen, ...
+
+[[[[[ ch17 ]]]]] 문서객체모델(DOM)
