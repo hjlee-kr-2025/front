@@ -171,4 +171,40 @@ var result = sum(3, 4); 를 실행하면 result안에 7이 담깁니다.
 var sum = (number1, number2) => {
   return number1 + number2;
 }
+(이벤트와 이벤트처리기)
+이벤트 - 웹브라우저 또는 사용자가 행하는 동작 (웹브라우저 안에서)
+* 마우스 이벤트
+  - click : 마우스 클릭
+  - dbclick : 마우스 더블클릭
+  - mouseover : 마우스 포인터가 위에 올라왔을때
+  - mouseout : 마우스 포인터가 벗어났을때때
+* 키보드 이벤트
+  - keydown : 키보드를 누르는 동안 발생
+* 문서로딩 이벤트
+  - load : 문서 로딩이 끝나면(html내용이 다 올라오면)
+* 폼 이벤트
+  - change : <input>,<select>,<textarea>에서 사용되고, 값이 변경될때 발생
+  - reset : 폼이 리셋되었을때(reset버튼 클릭시)
+  - submit : submit버튼을 클릭했을때 발생
+
+이벤트 등록
+1. 태그에 속성으로 등록합니다. - 이벤트이름앞에 on을 붙여서 사용
+  <a href="#" onclick="alert(Green을 클릭했습니다.)">Green</a>
+  => Green글자를 클릭했을때 알림메시지를 표시하도록 합니다.
+2. DOM을 이용한 이벤트 등록
+  <button id="change">글자색 바꾸기</button>
+  <p>문장내용</p>
+  ==>
+  <script>
+  var changeBtn = document.querySeletor('#change');//id='change'인 element를 찾아서 changeBtn 변수에 연결합니다.
+
+  changeBtn.onclick = changeColor; // DOM객체.이벤트속성 = 함수이름;
+  function changeColor() {
+    document.querySeletor("p").style.color = "red"; //p 태그를 찾아서 글자색을 빨간색으로 변경. 여기서는 "문장내용"이 빨간색이 됩니다.
+  }
+  ====>
+  changeBtn.onclick = function () { // 이벤트 등록후 익명함수로 정의
+    document.querySeletor("p").style.color = "red"; //p 태그를 찾아서 글자색을 빨간색으로 변경. 여기서는 "문장내용"이 빨간색이 됩니다.
+  }
+  </script>
 
