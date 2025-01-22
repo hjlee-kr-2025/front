@@ -739,4 +739,29 @@ align-items: flex-start | flex-end | center | baseline | streth; (p418, 그림12
   bassline: 문자를 기준으로 배치
   stretch: 박스을 위/아래여백없이 채우는 배치
 
-p423 그리드 레이아웃
+p423 CSS 그리드 레이아웃
+CSS 그리드 레이아웃을 사용하려면
+부모요소에
+display: grid;
+grid-template-columns: 200px 200px 200px; /*한줄에 너비가 200px인 칼럼 3개 */
+grid-template-rows: 100px; /* 여러줄이 될 경우 한줄의 높이는 100px로 설정 */
+로 설정합니다.
+grid-template-columns: 1fr 1fr 1fr; /* 이런 형태로 더 많이 설정합니다
+한줄을 3등분한다는 의미입니다. repeat(3, 1fr) 이것도 같은 의미입니다.*/
+
+박스를 배치할 때는 그리드 라인을 이용합니다.
+        1     2       3     4
+        --------------------     1
+        |     |       |     |
+        --------------------     2
+        |     |       |     |
+        --------------------     3
+        |     |       |     |
+        --------------------     4
+
+#box1 {
+  grid-column: 1/4; /* box1의 가로크기를 1번에서 시작에서 4번까지 로 한다는 의미입니다 grid-colume-start:1; grid-column-end:4; */
+}
+#box2 {
+  grid-row: 2/4; /* box2의 세로크기를 2번에서 4번까지. grid-row-start:2; grid-row-end:4; 와 동일 */
+}
