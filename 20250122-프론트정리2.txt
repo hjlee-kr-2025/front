@@ -228,10 +228,82 @@ name.indexOf("efg"); 일치되는 문자열을 찾고 첫인덱스를 돌려줍�
 여기서는 4를 돌려줍니다.
 만약에 일치하는 값이 없으면? -1을 돌려줍니다.
 
-*** 브라라우저와 관련된 객체
+*** 브라우저와 관련된 객체
 window객체
 - 화면에 관계된 내용을 확인할 때 주로 사용됩니다.
 - 팝업창을 만들거나 브라우저를 열어서 위치를 지정할 때 사용할 수 있습니다.
 - document, screen, ...
 
 [[[[[ ch17 ]]]]] 문서객체모델(DOM)
+DOM - 자바스크립트를 이용하여 웹문서를 쉽게 제어가능하도록 만든것.
+      (방법: element를 객체화 함)
+
+DOM의 계층관계 설명그림 (p603, 그림 17-1)
+-> 태그의 속성이나 text도 하나의 객체로 만들어집니다.
+이것을 표현한 그림 DOM 트리 (p604, 그림 17-2)
+
+DOM 트리안에 하나의 객체를 노드
+노드에는 크게 3가지:
+element(태그), attribute(태그속성+값), text(시작태그와 종료태그안에 들어가는 text)
+
+DOM요소(element)에 접근하기 - CSS의 기본선택자를 생각하면 이해하기 쉽습니다.
+- document.querySeletor("선택자");
+  -> 하나의 element만 가져옵니다. html문서에 같은 선택자가 여러개 존재하면 제일 위에서부터 처음 찾는 것을 가져옵니다.
+
+-> 선택자에 대한 설명은 CSS를 참고하세요
+
+- document.querySelectorAll("선택자");
+  -> 선택자로 지정된 모든 요소를 가져오는데, 배열처럼 사용하시면 됩니다. 하나만 찾았더라도 배열처럼 사용해야합니다.
+  사용예)
+  var box = document.querySelectorAll(".box");
+  box[0].style.border = "1px solid black";// 반드시 index와 함께 사용
+  ==> CSS에서는 클래스선택자로 한번에 스타일을 변경하지만, JS에서는 개별적으로 스타일을 변경해야 합니다. 같은 스타일로 변경하려면 반복문을 사용하시면 됩니다.
+
+- document.getElementById("id값"); -> 선택자를 사용하는 것이 아닌 id값을 그대로 사용합니다.
+  한개의 값만 가져옵니다.
+  document.querySelector("#id값")와 유사.
+- document.getElementsByClassName("class값");
+  -> 사용시 배열처럼 인덱스와 함께 사용하셔야 합니다.
+  -> document.querySelectorAll(".class값"); 과 유사.
+- document.getElementsByTagName("태그명");
+  -> 사용시 배열처럼 인덱스와 함께 사용.
+  -> document.querySelectorAll("태그명"); 과 유사.
+
+
+*웹요소의 내용을 수정하는: innerText, innerHTML 프로퍼티(속성)
+innerText와 innerHTML은 지정된 element의 시작태그와 종료태그사이에 들어가는 값을 지정합니다.
+innerText : 모든 글자가 text로 변경되어 적용
+innerHTML : 태그는 element로 변경되고 다른요소는 text로 변경됩니다.
+예)
+<div id='current'><div>
+===>
+document.innerText = "이것은 <b>중요한</b> 내용입니다.";
+==> 브라우저 화면에 아래와 같이 나옵니다.
+  이것은 <b>중요한</b> 내용입니다.
+
+document.innerHTML = "이것은 <b>중요한</b> 내용입니다.";
+==> 이것은 중요한 내용입니다. // '중요한'은 굵은 글씨로 표현
+
+
+* 속성을 가져오거나 수정하는 메서드: getAttribute(); setAttribute();
+getAttribute("속성");
+setAttribute("속성", "속성값");
+
+
+**** DOM 에서 이벤트 처리하기
+1. DOM요소에 함수 직접연결하기 (익명함수사용)
+  <img src="../image/cup-1.png" id="cup">
+  ==> 이미지를 클릭했을때 알림창이 나오도록하는 처리를 onclick에 익명함수를 사용해서 구현하였습니다.
+  var cup = document.querySelector("#cup");
+  cup.onclick = function() {
+    alert("이미지를 클릭했습니다");
+  }
+2. 함수이름사용하기 -> 함수이름을 onclick에 대입시 ()는 사용하지 않습니다.
+  var cup = document.querySelector("#cup");
+  cup.onclick = clickImg;
+  function clickImg() {/* 함수정의 */
+    alert("이미지를 클릭했습니다.");
+  }
+
+** DOM의 event객체
+
