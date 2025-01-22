@@ -548,5 +548,195 @@ table, th, td {
     color: green;
   }
   ==> 네이버 글자만 green으로 변경됩니다.
+--- [속성~=속성값] : 속성중 속성값이 포함되는 element 선택
+  예)
+  <ul>
+    <li><a href="#" class="button">메뉴1</a></li>
+    <li><a href="#" class="flat">메뉴2</a></li>
+    <li><a href="#" class="flat">메뉴3</a></li>
+    <li><a href="#" class="flat button">메뉴4</a></li>
+  </ul>
+  ===>
+  a[class ~= "button"] {
+    color: blue;
+  }
+  ===> 메뉴1, 메뉴4의 글자색만 blue로 변경경
+--- [속성|=값] : 속성값이 값이거나 값-로 시작할때 선택
+  예)
+  <ul>
+    <li>외국어서비스</li>
+    <li><a href="#" title="us-english">영어</a></li>
+    <li><a href="#" title="japan">일본어</a></li>
+    <li><a href="#" title="chn">중국어</a></li>
+  </ul>
+  ==>
+  a[title |= "us"] {
+    color: red;
+  }
+  a[title |= "jap"] {
+    color: blue;
+  }
+  a[title |= "chn"] {
+    color: green;
+  }
+  ===> 영어: 빨간색, 중국어: 녹색 으로 적용, 일본어는 적용안됨
+--- [속성^=값] : 값으로 시작할 때
+  예)
+  <ul>
+    <li>외국어서비스</li>
+    <li><a href="#" title="us-english">영어</a></li>
+    <li><a href="#" title="japan">일본어</a></li>
+    <li><a href="#" title="chn">중국어</a></li>
+  </ul>
+  ==>
+  a[title ^= "us"] {
+    color: red;
+  }
+  a[title ^= "jap"] {
+    color: blue;
+  }
+  a[title ^= "chn"] {
+    color: green;
+  }
+  ===> 영어, 일본어, 중국어 스타일 적용
+--- [속성$=값] --- 속성값이 값으로 끝나는 element를 선택
+  ==> 화일의 확장자를 찾을때 많이 사용합니다.
+--- [속성*=값] --- 속성값에 어느위치던 값이 포함되어 있다면 선택
+(가상클래스와 가상요소, p336)
+--- :hover
+  예)
+  <ul>
+    <li>메뉴1</li>
+    <li>메뉴2</li>
+    <li>메뉴3</li>
+    <li>메뉴4</li>
+  </ul>
+  ==>
+  li:hover {/* 마우스커서가 올라왔을때 */
+    background-color: black;
+    color: white;
+  }
+  ===> 마우스 커서가 올라온 메뉴만 배경색이 검정색으로 글자가 흰색으로 변경됩니다.
+--- :checked
+  <ul>
+    <li>
+      <input name="menu" class="menu" type="radio" id="menu1">
+      <label for="menu1">메뉴1</label>
+    </li>
+    <li>
+      <input name="menu" class="menu" type="radio" id="menu2">
+      <label for="menu2">메뉴2</label>
+    </li>
+  </ul>
+  ===>
+  input:checked + label {
+    color: red;
+  }
+  ===> 라디오버튼이 선택된 곳의 글자색을 빨간색으로 변경
+
+[[[[[ ch11 ]]]]] 트랜지션과 에니메이션
+--- transform속성과 변형함수
+사용법) transform: 변형함수;
+    예) .photo {transform: translate(50px, 100px);}
+        => class='photo'로 설정되어있는 element를 x축으로 50px, y축으로 100px 이동합니다.
+*** 2차원 변형함수 (p357, 표11-1)
+- translate(x, y) : x축으로 x만큼, y축으로 y만큼 이동
+  => translateX(x), translateY(y) 로 각각 변형할 수 있다.
+- scale(x, y) : x축으로 x만큼, y축으로 y만큼 확대
+  => scaleX(x), scaleY(y) 로 각각 변형할 수 있다.
+- rotate(각도) : 각도만큼 회전 - 위를 기준으로 오른쪽방향회전전
+*** 3차원 변형함수는 책을 참고하세요 (p358, 표11-2)
+
+--- transition 속성 (p368)
+- transition-property : 트랜지션 대상 지정
+- transition-duration : 실행되는 시간
+- transition-timing-function : 실행 형태
+- transition-delay : 지연시간 설정
+- transition : 위의 4가지를 한꺼번에 설정.
+*** transition-property: all | none | <속성이름>;
+   all(전체속성, 기본값) | 지정안함 | 적용할 속성(특정속성만 적용할 때)
+   -- 두가지 이상의 속성을 지정할때는 ,로 구분합니다.
+*** transition-duration: <시간>; /* 1s, 2s, 3s: 숫자에 s를 붙이면 초입니다. */   
+*** transition-timing-function: linear | ease | ease-in | ease-out;
+    - linear : 균일하게 시간으로 동작
+    - ease(기본값) : 처음에 천천히 시작 점점빨라지다가 마지막에 천천히 끝남
+    - ease-in : 느리게 시작
+    - ease-out : 느리게 끝남남
+==> 우리가 실습했던 ch11의 tr-function.html을 실행해서 비교해 보세요.
+*** transition-delay: <시간>; /* 시작시 지연시간 설정 */
+--- 에니메이션 (p377)
+@keyframes <이름> {
+  from {
+    스타일1;
+  }
+  to {
+    스타일2;
+  }
+}
+===> 스타일1번에서 스타일2번으로 변경되는 에니메이션
+예) 
+  <div class="box" id="box1">box1</div>
+  =>
+  @keyframes shape {
+    from {border: 1px solid transparent;}
+    to {
+      border: 1px solid black;/* 테두리를 검정색으로 */
+      border-radius: 50%; /* 사각형을 원형으로 */
+    }
+  }
+  #box1 {
+    background-color: green;
+    border: 1px solid transparent; /* 1px 투명테두리 */
+    animation-name: shape; /* 키프레임 이름을 animaition-name 값으로 설정합니다. */
+    animation-duration: 3s; /* 동작시간 */
+    animation-iteration-count: infinite; /* 무한반복 */
+  }
 
 
+[[[[[ ch12 ]]]]] 반응형 웹과 미디어 쿼리
+*반응형 웹 - 브라우저의 가로size에 따라서 화면배치(스타일)를 자동으로 변경시켜주도록 하는 것
+@media screen and (min-width: 값) and (max-width: 값) {
+  /*스타일 코드*/
+  선택자 {
+    속성1: 속성값;
+  }
+}
+===> 화면크기가 min-width값이상이고, max-width값 이하일때 적용하는 style을 @media 쿼리 안에 구현해 줍니다.
+
+반응형웹을 구현할때는 외부css화일을 주로 사용하는데
+import할때 조건을 주어 import시킵니다.
+예)
+<style>
+@import url("css/style1.css") screen and (min-width: 값1) and (max-width: 값2);
+</style>
+--- 그리드 레이아웃 : 플렉서블 박스 레이아웃 / CSS 그리드 레이아웃
+P412 - 플렉스 박스 레이아웃
+큰 컨테이너(박스, 부모요소)에 작은 박스를 넣듯이 배치하는 방법
+부모선택자에 display: flex; 로 설정해서 자녀들이 플렉스박스 레이아웃방식으로 배치된다는 것을 알려줍니다.
+* p414 에 flex-direction 속성은 배치 방향을 설정합니다.
+flex-direction: row | row-reverse | column | column-reverse;
+* 줄을 바꾸는 속성 : flex-wrap
+flex-wrap: nowrap | wrap | wrap-reverse;
+  nowrap은 한줄에 배치
+  wrap은 부모박스 크기를 벗어나면 아래줄로 배치
+  wrap-reverse는 부모박스 크기를 벗어나면 윗줄로 배치
+
+===> 위 두가지 속성을 하나로 설정하는 flex-flow를 많이 사용합니다.
+예) flex-flow: row wrap;
+
+* 플렉스 항목 간격적용
+justify-content: flex-start | flex-end | center | space-between | space-around; (p417, 그림12-22참고)
+  flex-start: 왼쪽정렬
+  flext-end: 오른쪽정렬
+  center: 가운데 정렬
+  space-between: 양쪽정렬(좌,우배치 우선적용후 등간격)
+  space-around: 등간격정렬(외부여백중 좌우여백크기를 동일하게)
+* 교차축 정렬
+align-items: flex-start | flex-end | center | baseline | streth; (p418, 그림12-23 참고)
+  flex-start: 위쪽 기준 배치
+  flex-end: 아래쪽 기준 배치
+  center: 가운데 기준 배치
+  bassline: 문자를 기준으로 배치
+  stretch: 박스을 위/아래여백없이 채우는 배치
+
+p423 그리드 레이아웃
