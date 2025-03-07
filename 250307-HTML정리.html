@@ -135,16 +135,65 @@ html의 시작은 <!DOCTYPE html> 이 있습니다.
       </div>
       <!-- input 태그는 텍스트 한줄입력, 체크박스, 라디오버튼, 버튼, 날짜시간 등에 사용할 수 있습니다. -->
       <div>
-      <label>비밀번호:</label>
-      <input type="password" name="pw">
+      <label for="pw">비밀번호:</label>
+      <input type="password" name="pw" id="pw">
       </div>
       <!-- password는 화면에 글자대신 블릿으로 표시됩니다.-->
       <div>
-        
+        <label for="date">생일: </label>
+        <input type="date" id="date" name="birth">
       </div>
-
+      <div>
+        <input type="radio" name="gender" id="man">
+        <label for="man">남자</label>
+        <input type="radio" name="gender" id="woman">
+        <label for="woman">여자</label>
+        <!-- radio 버튼에서 name값이 같아야 같은 그룹으로 인식합니다. -->
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>관심사항</legend>
+      <input type="checkbox" id="ck1">
+      <label for="ck1">여행</label>
+      <input type="checkbox" id="ck2">
+      <label for="ck2">독서</label>
+      <input type="checkbox" id="ck3">
+      <label for="ck3">운동</label>
+    </fieldset>
+    <fieldset>
+      <legend>버튼을 만들어 봅시다.</legend>
+      <input type="submit" value="submit버튼(input)">
+      <input type="reset" value="reset(input)">
+      <input type="button" value="일반버튼(input)">
+      <br>
+      <button type="submit">submit</button>
+      <button type="reset">reset</button>
+      <button type="button">일반버튼</button>
+    </fieldset>
+    <fieldset>
+      <legend>다른태그들</legend>
+      <textarea rows="4" cols="30">여러줄을 입력할수 있습니다.</textarea>
+      <select><!-- 드랍다운메뉴에 사용합니다. -->
+        <option>메뉴1</option>
+        <option>메뉴2</option>
+        <option>메뉴3</option>
+      </select>
+      <br>
+      <input type="text" placeholder="입력해야할 내용을 처음에 표시할 수 있어요" size="50">
     </fieldset>
   </form>
-  
+  <!--
+  폼태그는 사용자 입력을 서버로 전송하기 위한 태그입니다.
+  submit 버튼클릭 또는 이벤트가 발생되면 서버에 데이터가 전송되는데 이때 중요한 속성이 name 입니다. 서버에서 name에 적인 이름이 key 값으로 사용됩니다.
+  -->
+  <!-- input 태그에 들어가는 속성중 몇가지를 설명하겠습니다.-->
+  <!--
+  placeholder : 입력이 안되어있을때 설명하는 문구
+  readonly : 수정이 안되는 속성(화면에 표시만)
+  required : 반드시 입력해야한다는 의미 - 비워진 상태로 submit 발생시 경고를 해줍니다.
+  maxlength : 최대문자개수
+  minlength : 최소문자개수
+  -->
+  <!-- 여기까지가 HTML 에 대한 내용입니다. ch5 마무리.-->
 </body>
 </html>
