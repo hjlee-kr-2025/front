@@ -62,5 +62,89 @@ html의 시작은 <!DOCTYPE html> 이 있습니다.
     <li>두번째 목록입니다.</li>
     <li>세번째 목록입니다.</li>
   </ul>
+  <!-- 테이블을 만들어 봅시다.-->
+  <table> <!-- 테이블 전체를 둘러 쌉니다. -->
+    <caption>테이블 제목(3x3)</caption>
+    <tr> <!-- 한 줄(행)을 의미합니다.-->
+      <th>1행 1열(제목)</th> <!-- th태그는 주로 제목에 사용하고 굵은글씨로 화면에 나타납니다. -->
+      <th>1행 2열(제목)</th>
+      <th>1행 3열(제목)</th>
+    </tr>
+    <tr>
+      <td>2행1열</td>
+      <td>2행2열</td>
+      <td>2행3열</td>
+    </tr>
+    <tr>
+      <td>3행1열</td>
+      <td>3행2열</td>
+      <td>3행3열</td>
+    </tr>
+  </table>
+  <!-- 테이블의 구조를 만들어 주는 태그 : thead, tbody, tfoot-->
+  <table>
+    <caption>테이블제목</caption>
+    <thead>
+      <tr>
+        <th>제목1</th>
+        <th>제목2</th>
+        <th>제목3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>내용1</td>
+        <td>내용2</td>
+        <td>내용3</td>
+      </tr>
+      <tr>
+        <td>내용A</td>
+        <td>내용B</td>
+        <td>내용C</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">하단내용</td>
+      </tr>
+    </tfoot>
+  </table>
+  <!-- 이미지를 표시합시다 -->
+  <img src="./images/1.jpg" alt="그림이 없을때 표시해요">
+  <img src="./images/bg.jpg" width="20%">
+  <br> <!-- 한줄을 내립니다.-->
+  <!-- 동영상을 보여주고 싶습니다. -->
+  <video src="./medias/salad.mp4" controls height="200px"></video>
+  <!-- 오디오는 video 대신에 audio 태그를 사용하면 됩니다.-->
+  <!-- 다른페이지로 이동하는 태그 a(앵커)태그-->
+  <p><a href="http://www.naver.com">네이버</a></p> 
+  <!-- 같은 탭에서 새로운 페이지로 전환됩니다. -->
+  <!-- 새로운 탭을 만들고 이동하려면 아래와 같이 사용합니다.-->
+  <p><a href="http://www.naver.com" target="_blank">네이버(새로운탭)</a></p>
+  <!-- 여기까지가 Do it! 웹표준의 정석 ch4장까지의 내용입니다. -->
+  <!-- ch5. 입력양식 (form태그) -->
+  <form action="" method="get">
+    <!-- action은 form태그안의 데이터를 전달하는 주소, method는 전달하는 방식(get/post)
+    get방식은 주소창에 데이터를 함께 보내는 방식인데 최대 4kbyte입니다. -->
+    <fieldset>
+      <legend>개인정보</legend>
+      <div>
+      <label for="name">이름: </label>
+      <!-- label 태그의 for속성값과 input 태그의 id 값이 같은 것과 연결이 됩니다.-->
+      <input type="text" id="name" name="name" required>
+      </div>
+      <!-- input 태그는 텍스트 한줄입력, 체크박스, 라디오버튼, 버튼, 날짜시간 등에 사용할 수 있습니다. -->
+      <div>
+      <label>비밀번호:</label>
+      <input type="password" name="pw">
+      </div>
+      <!-- password는 화면에 글자대신 블릿으로 표시됩니다.-->
+      <div>
+        
+      </div>
+
+    </fieldset>
+  </form>
+  
 </body>
 </html>
