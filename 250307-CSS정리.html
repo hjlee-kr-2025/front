@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Moirai+One&display=swap" rel="stylesheet">
   <style>
     /* style 태그에서 주석은 이곳에 적습니다. style 태그안에 css를 구성합니다. */
     h3 {
@@ -33,6 +36,74 @@
     #f2 {
       font-size: 20px;/*단위와 함께 사용합니다. px, em, pt, % 등이 있습니다. */
     }
+    .f3 {
+      font-style: italic;
+      font-weight: 900;
+      /* normal, bold, bolder, lighter, 100, 200, ..., 900 */
+      color: brown;
+    }
+    /* 웹폰트 설정 */
+    /* 구글폰트의 Embed code 를 복사하여 사용합니다. */
+    .f4 {
+      font-family: Merienda, cursive;
+    }
+    /* 글자색상 */
+    .c1 {
+      color : rgb(255, 0, 0);
+    }
+    .c2 {
+      color : #00ff00;
+    }
+    .c3 {
+      color: orange;
+    }
+    /* text-align */
+    .f6 {
+      text-align: center;
+    }
+    .f7 {
+      text-align: right;
+    }
+    .f8 {
+      text-align: justify;
+    }
+    .f9 {
+      text-align: left;/*기본값*/
+    }
+    /* 줄간격 */
+    .f10 {
+      font-size: 12px;
+      line-height: 24px;
+      /* 줄간격을 글자크가만큼 공백을 두려면 font-size의 2배크기로 설정해야 합니다 */
+    }
+    /* 리스트 스타일 */
+    .list1 {
+      list-style-type: lower-roman;
+    }
+    .list2 {
+      list-style-type: circle;
+    }
+    /*
+      list-style-type에 들어갈 수 있는 값은
+      disc, circle, square
+      decimal, lower-roman, upper-roman, lower-alpha, upper-alpha
+      none (블릿, 숫자 안나오도록)
+    */
+    /*table*/
+    table {
+      margin: 20px;
+      border: 1px solid black;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+    .t1 {
+      caption-side: bottom;
+      /* 표제목의 위치 : top(기본), bottom */
+      border-collapse: collapse;
+      /* table 테두리와, 셀 테두리를 하나로 합칩니다. */
+    }
   </style>
 </head>
 <body>
@@ -44,6 +115,59 @@
   <div>
     <p id="f1">글꼴을 지정하는 font-family</p>
     <p id="f2">폰트크기를 지정하는 font-size</p>
+    <p><span class="f3">이텔릭체 표시</span> font-style, 글자굵기 <span class="f3">font-weight</span></p>
+  </div>
+  <p class="f4">
+    웹폰트를 사용해 봅시다.<br>
+    Welcome, Hello World!!
+  </p>
+  <p class="f5">
+    글자색은 color<span class="c1">RGB함수사용</span>, <span class="c2">16진수코드사용</span>, <span class="c3">색상이름사용</span>
+  </p>
+  <div>
+    <p class="f6">텍스트를 정렬합니다. 가운데정렬</p>
+    <p class="f7">오른쪽 정렬</p>
+    <p class="f8">양쪽 정렬 입니다. 글씨가 한줄을 다 차지 하도록 만들어야 테스트가 되기 때문에 많이 적습니다.</p>
+    <p class="f9">왼쪽 정렬 입니다. 글씨가 한줄을 다 차지 하도록 만들어야 테스트가 되기 때문에 많이 적습니다.</p>
+  </div>
+  <div class="f10">줄간격 조절을 위해서 사용합니다.</div>
+  <div class="f10">line-height 속성입니다.</div>
+  <div>
+    <div>목록스타일</div>
+    <ol class="list1">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JAVASCRIPT</li>
+    </ol>
+    <ul class="list2">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JAVASCRIPT</li>
+    </ul>
+  </div>
+  <div>
+    <table>
+      <caption>표스타일1</caption>
+      <tr>
+        <th>표제목1</th>
+        <th>표제목2</th>
+      </tr>
+      <tr>
+        <td>내용1</td>
+        <td>내용2</td>
+      </tr>
+    </table>
+    <table class="t1">
+      <caption>표스타일2</caption>
+      <tr>
+        <th>표제목1</th>
+        <th>표제목2</th>
+      </tr>
+      <tr>
+        <td>내용1</td>
+        <td>내용2</td>
+      </tr>
+    </table>
   </div>
 </body>
 </html>
