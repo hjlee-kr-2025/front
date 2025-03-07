@@ -354,7 +354,7 @@
       color: white;
     }
     /* flex */
-    #box20 {
+    #box20, #box21, .box13 {
       border: 1px dotted #222;
     }
     .container {
@@ -384,6 +384,69 @@
     }
     #opt4 {
       flex-direction: column-reverse;
+    }
+    .box12 {
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      background: green;
+      color: white;
+      font-size: 20px;
+      margin: 5px;
+    }
+    #opt5 {
+      flex-wrap: nowrap;/*기본*/
+    }
+    #opt6 {
+      flex-wrap: wrap;
+    }
+    #opt7 {
+      flex-wrap: wrap-reverse;
+    }
+    #opt8 {
+      flex-flow: row nowrap;/*기본*/
+      /*flex-direction, flex-wrap 을 동시에 설정*/
+    }
+    #opt9 {
+      flex-flow: row wrap;
+    }
+    .container1 {
+      width: 120px;
+      height: 90px;
+      display: flex;
+      flex-flow: row wrap;
+      border: 1px solid #222;
+      background: #eee;
+      margin: 30px;
+    }
+    .box14 {
+      width: 50px;
+      background: green;
+      color: white;
+      text-align: center;
+    }
+    #opt10 {
+      align-content: flex-start;
+      justify-content: flex-end;
+    }
+    #opt11 {
+      align-content: flex-end;
+      justify-content: center;
+    }
+    #opt12 {
+      align-content: center;
+      justify-content: space-between;
+    }
+    #opt13 {
+      align-content: space-between;
+      justify-content: space-around;
+    }
+    #opt14 {
+      align-content: space-around;
+    }
+    #opt15 {
+      align-content: stretch;
     }
   </style>
 </head>
@@ -531,6 +594,93 @@
       <div class="box11">1</div>
       <div class="box11">2</div>
       <div class="box11">3</div>
+    </div>
+  </div>
+  <div id="box21">
+    <p>flex-wrap : nowrap;</p>
+    <div id="opt5" class="container">
+      <div class="box12">1</div>
+      <div class="box12">2</div>
+      <div class="box12">3</div>
+      <div class="box12">4</div>
+      <div class="box12">5</div>
+      <div class="box12">6</div>
+    </div>
+    <p>flex-wrap : wrap;</p>
+    <div id="opt6" class="container">
+      <div class="box12">1</div>
+      <div class="box12">2</div>
+      <div class="box12">3</div>
+      <div class="box12">4</div>
+      <div class="box12">5</div>
+      <div class="box12">6</div>
+    </div>
+    <p>flex-wrap : wrap-reverse;</p>
+    <div id="opt7" class="container">
+      <div class="box12">1</div>
+      <div class="box12">2</div>
+      <div class="box12">3</div>
+      <div class="box12">4</div>
+      <div class="box12">5</div>
+      <div class="box12">6</div>
+    </div>
+  </div>
+  <div class="box13">
+    <p>flex-flow: row nowrap</p>
+    <div id="opt8" class="container">
+      <div class="box12">1</div>
+      <div class="box12">2</div>
+      <div class="box12">3</div>
+      <div class="box12">4</div>
+      <div class="box12">5</div>
+      <div class="box12">6</div>
+    </div>
+    <p>flex-flow: row wrap</p>
+    <div id="opt9" class="container">
+      <div class="box12">1</div>
+      <div class="box12">2</div>
+      <div class="box12">3</div>
+      <div class="box12">4</div>
+      <div class="box12">5</div>
+      <div class="box12">6</div>
+    </div>
+  </div>
+  <div class="box13" id="box22">
+    <div id="opt10" class="container1">
+      <div class="box14">1</div>
+      <div class="box14">2</div>
+      <div class="box14">3</div>
+      <div class="box14">4</div>
+    </div>
+    <div id="opt11" class="container1">
+      <div class="box14">1</div>
+      <div class="box14">2</div>
+      <div class="box14">3</div>
+      <div class="box14">4</div>
+    </div>
+    <div id="opt12" class="container1">
+      <div class="box14">1</div>
+      <div class="box14">2</div>
+      <div class="box14">3</div>
+      <div class="box14">4</div>
+    </div>
+    <div id="opt13" class="container1">
+      <div class="box14">1</div>
+      <div class="box14">2</div>
+      <div class="box14">3</div>
+      <div class="box14">4</div>
+    </div>
+    <div id="opt14" class="container1">
+      <div class="box14">1</div>
+      <div class="box14">2</div>
+      <div class="box14">3</div>
+      <div class="box14">4</div>
+    </div>
+    <div id="opt15" class="container1">
+      <div class="box14">1</div>
+      <div class="box14">2</div>
+      <div class="box14">3</div>
+      <div class="box14">4</div>
     </div>
   </div> 
 </body>
