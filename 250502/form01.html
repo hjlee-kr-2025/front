@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05-1 폼 삽입하기</title>
+</head>
+<body>
+  <h1>폼 - form 태그 : 속성(action, method)</h1>
+  <p>전송방식 : GET</p>
+  <form action="table.html" method="get">
+    <p>
+      <label for="name">이름: </label>
+      <input name="name" id="name">
+    </p>  
+    <button>submit</button>
+  </form>
+  <hr>
+  <p>전송방식 : POST</p>
+  <form action="list.html" method="post">
+    <p>
+      <label for="name1">이름: </label>
+      <input name="name1" id="name1">
+    </p>
+    <button>submit(post)</button>
+  </form>
+  <form>
+    <fieldset>
+      <legend>그룹이름</legend>
+      <p>
+        <label for="name2">이름</label>
+        <input name="name2" id="name2">
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>그룹이름2</legend>
+      <p>
+        <label for="age">나이</label>
+        <input name="age" id="age">
+      </p>
+    </fieldset>
+  </form>
+</body>
+</html>

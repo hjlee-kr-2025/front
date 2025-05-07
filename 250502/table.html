@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04-3 표 만들기</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;/* 테두리선 */
+      border-collapse: collapse;/* table과 셀의 선을 합치기 */
+    }
+    th, td {
+      padding: 5px 20px;/* 내부여백 */
+    }
+  </style>
+</head>
+<body>
+  <h1>표만들기 : table, caption, tr, th, td</h1>
+  <table>
+    <caption>표제목</caption>
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+    </tr>
+    <tr>
+      <td>내용3</td>
+      <td>내용4</td>
+    </tr>
+  </table>
+  <!-- 테이블 태그를 사용한다고 해서 선이 그려지는 것은 아닙니다. 표형태로만 글씨가 표현됩니다. -->
+  <hr>
+  <table>
+    <caption>요안도라 객실</caption>
+    <thead>
+      <tr>
+        <th>방이름</th>
+        <th>대상</th>
+        <th>크기</th>
+        <th>가격</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>유채방</td>
+        <td>여성 도미토리</td>
+        <td rowspan="3">4인실</td>
+        <td rowspan="4">1인 20,000원</td>
+      </tr>
+      <tr>
+        <td rowspan="2">동백방</td>
+        <td>동성 도미토리</td>
+      </tr>
+      <tr>
+        <td>가족 1팀</td>
+      </tr>
+      <tr>
+        <td>천혜향방</td>
+        <td>-</td>
+        <td>2인실</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">바깥채 전체를 렌트합니다.</th>
+        <!-- 열을 하나로 합쳐주는 colspan 속성 -->
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>

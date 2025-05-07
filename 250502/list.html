@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04-2. 목록만들기</title>
+</head>
+<body>
+  <h1>목록만들기 : ol, ul, li</h1>
+  <p>순서가 있는 목록 : ol</p>
+  <ol>
+    <li>첫번째 항목</li>    
+    <li>두번째 항목</li>    
+    <li>세번째 항목</li>    
+  </ol>
+  <ol type="i"> 
+    <!-- type에 들어난 문자는 5가지중 하나입니다.
+    1(숫자), A(대문자), a(소문자), I(로마대문자), i(로마소문자) 
+    -->
+    <li>첫번째 항목</li>
+    <li>두번째 항목</li>
+    <li>세번째 항목</li>
+  </ol>
+  <ol type="A" start="3">
+    <!-- start 속성은 시작되는 번호(문자)를 나타냅니다.
+    start에 들어가는 값은 숫자로만 기록합니다. 
+    -->
+    <li>첫번째 항목</li>
+    <li>두번째 항목</li>
+    <li>세번째 항목</li>
+  </ol>
+  <hr>
+  <p>순서가 없는 목록 : ul</p>
+  <!-- 숫자나 문자대신 블릿이 앞에 나옵니다. -->
+  <ul>
+    <li>첫번째 항목</li>
+    <li>두번째 항목</li>
+    <li>세번째 항목</li>
+  </ul>
+  <hr>
+  <p>설명 목록을 만드는 dl, dt, dd</p>
+  <dl>
+    <dt>선물용 5Kg</dt>
+    <dd>소과 18~20개</dd>
+    <dd>중과 12~15개</dd>
+    <dd>대과 8~10개</dd>
+  </dl>
+</body>
+</html>

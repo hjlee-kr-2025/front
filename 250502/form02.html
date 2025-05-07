@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05-2 사용자 입력을 위한 input태그</title>
+</head>
+<body>
+  <h1>input태그</h1>
+  <form action="form01.html">
+    <p>
+      <label>텍스트입력: <input type="text" placeholder="type='text'"></label>
+    </p>
+    <p>
+      <lable>비밀번호: <input type="password" placeholder="type='password'"></lable>
+    </p>
+    <p>
+      <label>이메일: <input type="email" placeholder="type='email'"></label>
+    </p>
+    <p>
+      <label><input type="checkbox"> 선택/해제(checkbox)</label>
+    </p>
+    <p>
+      <input type="radio" name="gender" id="man" value="남성">
+      <label for="man">남성</label>
+      <input type="radio" name="gender" id="woman" value="여성">
+      <label for="woman">여성</label>
+    </p>
+    <p>
+      <label>날짜: <input type="date"></label>
+    </p>
+    <p>
+      <label>시간 : <input type="time"></label>
+    </p>
+    <p>
+      <label>파일 : <input type="file"></label>
+    </p>
+    <input type="submit" value="submit">
+    <input type="button" value="button">
+    <input type="reset" value="reset">
+  </form>
+</body>
+</html>
